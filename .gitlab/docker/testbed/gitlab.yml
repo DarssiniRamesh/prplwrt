@@ -2,3 +2,13 @@ build Docker image testbed:
   extends: .build Docker image
   variables:
     DOCKER_DOCKERFILE_PATH: .gitlab/docker/builder
+
+test Docker image testbed:
+  stage: docker test
+  extends: .docker in docker
+  script:
+    - echo "TODO :-)"
+
+deploy Docker image testbed:
+  stage: docker deploy
+  extends: .deploy Docker image
