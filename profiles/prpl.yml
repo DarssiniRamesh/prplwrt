@@ -14,6 +14,8 @@ packages:
   - umdns
   - bbfd
   - prplmesh
-
+  - ip-bridge
+  - ip-full
+  
 diffconfig: |
           CONFIG_PACKAGE_rpcd-mod-luci=y
