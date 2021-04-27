@@ -16,6 +16,7 @@ packages:
   - prplmesh
   - ip-bridge
   - ip-full
+  - tcpdump
   
 diffconfig: |
           CONFIG_PACKAGE_rpcd-mod-luci=y
