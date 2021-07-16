@@ -2,21 +2,11 @@ build Docker image builder:
   extends: .build Docker image
   variables:
     DOCKER_DOCKERFILE_PATH: .gitlab/docker/builder
-  rules:
-    - if: '$CI_COMMIT_BRANCH == $CI_DESIGNATED_BRANCH'
-    - changes:
-      - .gitlab/docker/builder/*
-      - .gitlab/docker.yml
 
 test Docker image builder:
   stage: docker test
   extends: .docker in docker
   needs: ["build Docker image builder"]
-  rules:
-    - if: '$CI_COMMIT_BRANCH == $CI_DESIGNATED_BRANCH'
-    - changes:
-      - .gitlab/docker/builder/*
-      - .gitlab/docker.yml
   script:
     - export IMAGE_NAME="$(echo $CI_JOB_NAME | sed 's/test Docker image \(.*\)/\1/')"
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
