@@ -3,7 +3,9 @@
   image: "$CI_REGISTRY_IMAGE/$CI_DESIGNATED_BRANCH/testbed:latest"
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DESIGNATED_BRANCH'
+    - if: '$CI_PIPELINE_SOURCE != "schedule"'
     - when: manual
+      allow_failure: true
   variables:
     TESTBED_TFTP_PATH: /var/lib/tftpboot
     TFTP_IMAGE_PATH: bin/targets/$DUT_ARCH/$DUT_SUBTARGET
