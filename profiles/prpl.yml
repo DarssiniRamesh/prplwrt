@@ -48,3 +48,7 @@ diffconfig: |
           CONFIG_PACKAGE_rpcd-mod-luci=y
           CONFIG_PACKAGE_ip-full=y
           CONFIG_PACKAGE_ip-bridge=y
+          # CONFIG_BUSYBOX_CONFIG_NTPD is not set
+          CONFIG_PACKAGE_chrony=y
+          # CONFIG_PACKAGE_logd is not set
+          CONFIG_PACKAGE_syslog-ng=y
