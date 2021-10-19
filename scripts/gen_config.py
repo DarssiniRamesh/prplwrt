@@ -129,8 +129,7 @@ if run(["./scripts/feeds", "update"]).returncode:
 #     if run(["./scripts/feeds", "install", "-a", "-f", "-p", f.get("name")]).returncode:
 #         die(f"Error installing {feed}")
 
-if run(["./scripts/feeds", "install", "-a"]).returncode:
-    die(f"Error installing feeds")
+run(["./scripts/feeds", "install", "-a"])
 
 if profile.get("external_target", False):
     if run(["./scripts/feeds", "install", profile["target"]]).returncode:
