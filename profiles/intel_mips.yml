@@ -12,7 +12,7 @@ feeds:
   - name: feed_intel
     uri: https://gitlab.com/prpl-foundation/prplOS/feed-intel.git
     tracking_branch: ugw-8.5.2-cleanup
-    revision: 1a0fbd5e6f682bb8cac14b47ae3323402d501e1c
+    revision: dfe0a17ba3f15de532670d85921ee823903329dd
 
 packages:
   - dwpal_6x-uci
@@ -89,8 +89,8 @@ diffconfig: |
   CONFIG_DEVEL=y
   CONFIG_KERNEL_GIT_CLONE_URI="https://gitlab.com/prpl-foundation/intel/linux.git"
   CONFIG_KERNEL_GIT_DEPTH=""
-  CONFIG_KERNEL_GIT_REF="6739058ba9404ab82b6e06b5bff9f89cc9df3656"
-  CONFIG_KERNEL_GIT_MIRROR_HASH="89b3bdec22f358826459a66ed14ccaad7697b1b313620048bb649ec974104fd1"
+  CONFIG_KERNEL_GIT_REF="dc542d0ac6100123552c3a6ea12296061850e20b"
+  CONFIG_KERNEL_GIT_MIRROR_HASH="a71dfc465a43991dd035786ca690c1fe3a8b0e544b012827bff35b80e2d23f41"
   CONFIG_LTQ_SWITCH_CLI_UGW8_HELP_PRINTOUT=y
   CONFIG_OPENSSL_ENGINE=y
   CONFIG_OPENSSL_PREFER_CHACHA_OVER_GCM=y
