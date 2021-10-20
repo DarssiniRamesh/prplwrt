@@ -1,4 +1,6 @@
 /**
+ * Default configuration for WNC board
+
  * ***********************************************************************
  * * WARNING: this information is duplicated in the following UCI files: *
  * * - /etc/config/network                                               *
@@ -6,6 +8,7 @@
  * * If you make a modification here you probably need to make a         *
  * * modification to these files too.                                    *
  * ***********************************************************************
+ *
  * @version 1.0
  */
 

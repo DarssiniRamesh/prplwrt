@@ -8,7 +8,7 @@
                     parameter Enable = true;
                     parameter Name = "br-lan";
                 }
-                instance add("ETH1") {
+                instance add("ETH0") {
                     parameter Enable = true;
                     parameter Name = "eth0";
                 }

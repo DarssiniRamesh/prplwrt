@@ -63,13 +63,13 @@
 %populate {
     object 'Firewall.${prefix_}Policy' {
         instance add(Alias=Wan2Lan) {
-            parameter SourceInterface = "eth0";
+            parameter SourceInterface = "eth1";
             parameter DestinationInterface = "br-lan";
             parameter Chain = "Firewall.Chain.L_Low.";
             parameter Enable = 1;
         }
         instance add(Alias=Wan2Guest) {                              
-            parameter SourceInterface = "eth0";                   
+            parameter SourceInterface = "eth1";
             parameter DestinationInterface = "br-guest";             
             parameter Chain = "Firewall.Chain.L_Low.";              
             parameter Enable = 1;                                 
