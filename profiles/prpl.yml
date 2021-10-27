@@ -4,7 +4,7 @@ feeds:
   - name: feed_prpl
     uri: https://gitlab.com/prpl-foundation/prplOS/feed-prpl.git
     tracking_branch: prplos
-    revision: f5e02e390c3a3e0a2b1ebb01dc7b1a18abe92313
+    revision: b22e36a93fd4641a9422ae5147d1a0374bddf99b
 
 packages:
   - obuspa
