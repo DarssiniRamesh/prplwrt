@@ -69,41 +69,39 @@ diffconfig: |
           CONFIG_PACKAGE_liblxc=y
           # CONFIG_PACKAGE_rpcd-mod-lxc is not set
           # CONFIG_PACKAGE_luci-app-lxc is not set
-          CONFIG_PACKAGE_lxc=y
-          CONFIG_PACKAGE_lxc-attach=y
-          CONFIG_PACKAGE_lxc-auto=y
-          CONFIG_PACKAGE_lxc-autostart=y
-          CONFIG_PACKAGE_lxc-cgroup=y
-          CONFIG_PACKAGE_lxc-checkconfig=y
-          CONFIG_PACKAGE_lxc-common=y
-          CONFIG_PACKAGE_lxc-config=y
-          CONFIG_PACKAGE_lxc-configs=y
-          CONFIG_PACKAGE_lxc-console=y
-          CONFIG_PACKAGE_lxc-copy=y
-          CONFIG_PACKAGE_lxc-create=y
-          CONFIG_PACKAGE_lxc-destroy=y
-          CONFIG_PACKAGE_lxc-device=y
-          CONFIG_PACKAGE_lxc-execute=y
-          CONFIG_PACKAGE_lxc-freeze=y
-          CONFIG_PACKAGE_lxc-hooks=y
-          CONFIG_PACKAGE_lxc-info=y
-          # CONFIG_PACKAGE_lxc-init is not set
-          CONFIG_PACKAGE_lxc-ls=y
-          CONFIG_PACKAGE_lxc-monitor=y
-          # CONFIG_PACKAGE_lxc-monitord is not set
-          # CONFIG_PACKAGE_lxc-snapshot is not set
-          CONFIG_PACKAGE_lxc-start=y
-          CONFIG_PACKAGE_lxc-stop=y
-          CONFIG_PACKAGE_lxc-templates=y
-          CONFIG_PACKAGE_lxc-top=y
-          CONFIG_PACKAGE_lxc-unfreeze=y
-          CONFIG_PACKAGE_lxc-unprivileged=y
-          CONFIG_PACKAGE_lxc-unshare=y
-          CONFIG_PACKAGE_lxc-user-nic=y
-          CONFIG_PACKAGE_lxc-usernsexec=y
-          CONFIG_PACKAGE_lxc-wait=y
-          CONFIG_PACKAGE_libnl-core=y
-          CONFIG_PACKAGE_libnl-route=y
+          CONFIG_PACKAGE_lxc4=y
+          CONFIG_PACKAGE_lxc4-attach=y
+          CONFIG_PACKAGE_lxc4-auto=y
+          CONFIG_PACKAGE_lxc4-autostart=y
+          CONFIG_PACKAGE_lxc4-cgroup=y
+          CONFIG_PACKAGE_lxc4-checkconfig=y
+          CONFIG_PACKAGE_lxc4-common=y
+          CONFIG_PACKAGE_lxc4-config=y
+          CONFIG_PACKAGE_lxc4-configs=y
+          CONFIG_PACKAGE_lxc4-console=y
+          CONFIG_PACKAGE_lxc4-copy=y
+          CONFIG_PACKAGE_lxc4-create=y
+          CONFIG_PACKAGE_lxc4-destroy=y
+          CONFIG_PACKAGE_lxc4-device=y
+          CONFIG_PACKAGE_lxc4-execute=y
+          CONFIG_PACKAGE_lxc4-freeze=y
+          CONFIG_PACKAGE_lxc4-hooks=y
+          CONFIG_PACKAGE_lxc4-info=y
+          # CONFIG_PACKAGE_lxc4-init is not set
+          CONFIG_PACKAGE_lxc4-ls=y
+          CONFIG_PACKAGE_lxc4-monitor=y
+          # CONFIG_PACKAGE_lxc4-monitord is not set
+          # CONFIG_PACKAGE_lxc4-snapshot is not set
+          CONFIG_PACKAGE_lxc4-start=y
+          CONFIG_PACKAGE_lxc4-stop=y
+          CONFIG_PACKAGE_lxc4-templates=y
+          CONFIG_PACKAGE_lxc4-top=y
+          CONFIG_PACKAGE_lxc4-unfreeze=y
+          CONFIG_PACKAGE_lxc4-unprivileged=y
+          CONFIG_PACKAGE_lxc4-unshare=y
+          CONFIG_PACKAGE_lxc4-user-nic=y
+          CONFIG_PACKAGE_lxc4-usernsexec=y
+          CONFIG_PACKAGE_lxc4-wait=y
           CONFIG_SAH_SERVICES_CTHULHU_INIT_CONTAINER_BACKEND=y
           CONFIG_SAH_SERVICES_CTHULHU_CONTAINER_BACKEND="/usr/lib/cthulhu-lxc/cthulhu-lxc.so"
           CONFIG_SAH_SERVICES_TIMINGILA_INIT_ADAPTERS=y
