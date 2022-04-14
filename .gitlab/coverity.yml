@@ -92,6 +92,7 @@
       prplmesh
       routing-manager
       time-manager
+      tr069-manager
       tr181-bridging
       tr181-device
       tr181-dhcpv4client

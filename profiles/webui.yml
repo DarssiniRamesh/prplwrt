@@ -3,8 +3,8 @@ description: Add the prpl WebUI
 feeds:
   - name: feed_prpl
     uri: https://gitlab.com/prpl-foundation/prplOS/feed-prpl.git
-    tracking_branch: prplos
-    revision: ddf04197e741f6c55f459a2851231aaef7807e93
+    tracking_branch: ynezz/tr069-manager
+    revision: 99a99d718ef56edd43f1705bc2303004cbc237d0
 
 packages:
   - luci-mod-simple
