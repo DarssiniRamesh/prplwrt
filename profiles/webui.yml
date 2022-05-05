@@ -4,7 +4,7 @@ feeds:
   - name: feed_prpl
     uri: https://gitlab.com/prpl-foundation/prplOS/feed-prpl.git
     tracking_branch: ynezz/tr069-manager
-    revision: 99a99d718ef56edd43f1705bc2303004cbc237d0
+    revision: ee2dee172d4e77e2990e352691000638b50bdb1d
 
 packages:
   - luci-mod-simple
