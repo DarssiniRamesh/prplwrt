@@ -110,6 +110,7 @@
 
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+    - when: manual
 
   script:
     - mkdir logs
