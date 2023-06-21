@@ -88,9 +88,5 @@ targets:
         username: kingbanik
       UBootDriver:
         prompt: 'IPQ807x# '
-        init_commands:
-          - setenv serverip 10.0.0.1
-          - setenv ipaddr 10.0.0.2
-        boot_command: tftpboot openwrt-ipq807x-generic-prpl_haze-initramfs-uImage.itb && bootm
         boot_command_delay: 3
       UBootStrategy: {}
