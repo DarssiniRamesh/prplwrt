@@ -1,6 +1,6 @@
 .cdrouter:
   stage: cdrouter
-  image: "$CI_REGISTRY_IMAGE/$CI_DESIGNATED_BRANCH/testbed:latest"
+  image: "$CI_REGISTRY_IMAGE/$IMAGE_NAME:$CI_COMMIT_REF_SLUG"
   rules:
     - when: manual
   variables:
