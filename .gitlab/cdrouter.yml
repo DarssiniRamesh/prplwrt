@@ -9,6 +9,7 @@
     - if: '$TFTP_IMAGE_DOWNLOAD_URL'
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DESIGNATED_BRANCH'
+    - if: '$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME =~ /^ci_s_.+_latest$/'
     - when: manual
   variables:
     CDROUTER_TEST_CONFIG: generic
@@ -73,6 +74,8 @@
     - ssh root@$TARGET_LAN_IP 'logger -t CI -p local0.info "System accessible over SSH, $(uptime -p)"' || true
     - ssh root@$TARGET_LAN_IP "cat /var/log/messages" > syslog-$LABGRID_TARGET.txt 2> /dev/null || true
     - ssh root@$TARGET_LAN_IP "ubus call system board" | tee system-$LABGRID_TARGET.json
+
+    - ssh root@$TARGET_LAN_IP "ba-cli 'DNS.Relay.X_PRPL-COM_Config.[Alias==\"lan\"].FlushCache()'"
 
     - >
       for dut_init_script in $DUT_INIT_SCRIPTS;
