@@ -3,7 +3,7 @@ description: Add the prpl features
 feeds:
   - name: feed_opensource
     uri: https://gitlab.com/prpl-foundation/prplos/feed_opensource.git
-    revision: gen_openwrt23.05_v0.4.1
+    revision: gen_openwrt23.05_v0.4.2
   - name: feed_amx
     uri: https://gitlab.com/prpl-foundation/prplos/feed_amx.git
     revision: v11.1.0
@@ -24,7 +24,7 @@ feeds:
     revision: v1.2.0
   - name: feed_peripheral
     uri: https://gitlab.com/prpl-foundation/prplos/feed_peripheral.git
-    revision: v0.8.4
+    revision: v0.8.5
   - name: feed_debug
     uri: https://gitlab.com/prpl-foundation/prplos/feed_debug.git
     revision: v2.0.8
@@ -33,22 +33,22 @@ feeds:
     revision: v1.8.0
   - name: feed_usp
     uri: https://gitlab.com/prpl-foundation/prplos/feed_usp.git
-    revision: v8.17.5
+    revision: v8.18.0
   - name: feed_lcm
     uri: https://gitlab.com/prpl-foundation/prplos/feed_lcm.git
     revision: v3.3.0
   - name: feed_tr69
     uri: https://gitlab.com/prpl-foundation/prplos/feed_tr69.git
-    revision: v0.24.43
+    revision: v0.24.45
   - name: feed_netmodel
     uri: https://gitlab.com/prpl-foundation/prplos/feed_netmodel.git
     revision: v4.10.3
   - name: feed_wifi_swl
     uri: https://gitlab.com/prpl-foundation/prplos/feed_wifi_swl.git
-    revision: v0.1.60
+    revision: v0.1.61
   - name: feed_wifi_core
     uri: https://gitlab.com/prpl-foundation/prplos/feed_wifi_core.git
-    revision: v1.0.9
+    revision: v1.0.10
   - name: feed_prpl
     uri: https://gitlab.com/prpl-foundation/prplOS/feed-prpl.git
     tracking_branch: prplos
