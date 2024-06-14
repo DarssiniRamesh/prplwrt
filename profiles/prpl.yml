@@ -3,22 +3,22 @@ description: Add the prpl features
 feeds:
   - name: feed_opensource
     uri: https://gitlab.com/prpl-foundation/prplos/feed_opensource.git
-    revision: gen_openwrt23.05_v0.4.2
+    revision: gen_openwrt23.05_v0.4.4
   - name: feed_amx
     uri: https://gitlab.com/prpl-foundation/prplos/feed_amx.git
-    revision: v11.1.0
+    revision: v11.2.0
   - name: feed_gmap
     uri: https://gitlab.com/prpl-foundation/prplos/feed_gmap.git
-    revision: v1.6.10
+    revision: v1.6.12
   - name: feed_net_core
     uri: https://gitlab.com/prpl-foundation/prplos/feed_net_core.git
-    revision: v16.8.9
+    revision: v16.10.1
   - name: feed_qos_firewall
     uri: https://gitlab.com/prpl-foundation/prplos/feed_qos_firewall.git
-    revision: v6.9.1
+    revision: v6.9.5
   - name: feed_net_services
     uri: https://gitlab.com/prpl-foundation/prplos/feed_net_services.git
-    revision: v11.1.7
+    revision: v11.2.2
   - name: feed_net_hl_services
     uri: https://gitlab.com/prpl-foundation/prplos/feed_net_hl_services.git
     revision: v1.2.0
@@ -27,10 +27,10 @@ feeds:
     revision: v0.8.5
   - name: feed_debug
     uri: https://gitlab.com/prpl-foundation/prplos/feed_debug.git
-    revision: v2.0.8
+    revision: v2.0.9
   - name: feed_board_configuration
     uri: https://gitlab.com/prpl-foundation/prplos/feed_board_configuration.git
-    revision: v1.8.0
+    revision: v1.9.1
   - name: feed_usp
     uri: https://gitlab.com/prpl-foundation/prplos/feed_usp.git
     revision: v8.19.0
@@ -39,7 +39,7 @@ feeds:
     revision: v3.3.0
   - name: feed_tr69
     uri: https://gitlab.com/prpl-foundation/prplos/feed_tr69.git
-    revision: v0.24.45
+    revision: v0.24.48
   - name: feed_netmodel
     uri: https://gitlab.com/prpl-foundation/prplos/feed_netmodel.git
     revision: v4.10.3
@@ -48,7 +48,7 @@ feeds:
     revision: v0.1.61
   - name: feed_wifi_core
     uri: https://gitlab.com/prpl-foundation/prplos/feed_wifi_core.git
-    revision: v1.0.11
+    revision: v1.0.15
   - name: feed_prpl
     uri: https://gitlab.com/prpl-foundation/prplOS/feed-prpl.git
     tracking_branch: prplos
