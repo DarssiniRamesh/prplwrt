@@ -3,34 +3,34 @@ description: Add the prpl features
 feeds:
   - name: feed_opensource
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_opensource.git
-    revision: gen_openwrt23.05_v0.7.0
+    revision: gen_openwrt23.05_v0.8.0
   - name: feed_amx
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_amx.git
-    revision: v11.4.0
+    revision: v11.6.0
   - name: feed_gmap
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_gmap.git
     revision: v1.7.0
   - name: feed_net_core
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_net_core.git
-    revision: v16.11.7
+    revision: v16.11.8
   - name: feed_qos_firewall
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_qos_firewall.git
-    revision: v6.10.0
+    revision: v6.11.1
   - name: feed_net_services
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_net_services.git
-    revision: v11.4.3
+    revision: v12.0.0
   - name: feed_net_hl_services
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_net_hl_services.git
-    revision: v1.2.7
+    revision: v1.3.0
   - name: feed_peripheral
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_peripheral.git
-    revision: v0.9.0
+    revision: v0.9.1
   - name: feed_debug
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_debug.git
-    revision: v2.0.10
+    revision: v2.0.12
   - name: feed_board_configuration
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_board_configuration.git
-    revision: v1.9.4
+    revision: v1.9.5
   - name: feed_usp
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_usp.git
     revision: v8.20.1
@@ -48,7 +48,7 @@ feeds:
     revision: v0.1.64
   - name: feed_wifi_core
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_wifi_core.git
-    revision: v1.0.23
+    revision: v1.0.24
   - name: feed_prpl
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed-prpl.git
     tracking_branch: prplos
@@ -78,6 +78,7 @@ packages:
   - deviceinfo-manager
   - dhcpv4-manager
   - dhcpv6s-manager
+  - dmtui
   - ethernet-manager
   - gmap-client
   - gmap-mibs-common
@@ -125,6 +126,9 @@ packages:
   - lxc-user-nic
   - lxc-usernsexec
   - lxc-wait
+  - mcastd-core
+  - mcastd-noforward
+  - mcastd-routing
   - miniupnpd-prpl
   - mod-amxb-ubus
   - mod-autosensing
@@ -196,6 +200,7 @@ packages:
   - tr181-ipdiagnostics
   - tr181-led
   - tr181-logical
+  - tr181-mcastd
   - tr181-mqttbroker
   - tr181-neighbordiscovery
   - tr181-pcp
