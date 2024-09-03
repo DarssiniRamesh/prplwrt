@@ -3,34 +3,34 @@ description: Add the prpl features
 feeds:
   - name: feed_opensource
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_opensource.git
-    revision: gen_openwrt23.05_v0.11.3
+    revision: gen_openwrt23.05_v0.11.5
   - name: feed_amx
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_amx.git
     revision: v11.10.2
   - name: feed_gmap
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_gmap.git
-    revision: v1.7.4
+    revision: v1.8.0
   - name: feed_net_core
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_net_core.git
-    revision: v16.13.8
+    revision: v17.0.0
   - name: feed_qos_firewall
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_qos_firewall.git
-    revision: v6.12.18
+    revision: v6.12.20
   - name: feed_net_services
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_net_services.git
-    revision: v12.2.2
+    revision: v12.3.3
   - name: feed_net_hl_services
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_net_hl_services.git
-    revision: v1.3.7
+    revision: v1.4.2
   - name: feed_peripheral
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_peripheral.git
     revision: v0.9.6
   - name: feed_debug
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_debug.git
-    revision: v2.0.15
+    revision: v2.1.0
   - name: feed_board_configuration
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_board_configuration.git
-    revision: v1.10.5
+    revision: v1.10.6
   - name: feed_usp
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_usp.git
     revision: v9.0.7
@@ -39,16 +39,16 @@ feeds:
     revision: v3.5.2
   - name: feed_tr69
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_tr69.git
-    revision: v0.26.9
+    revision: v0.26.11
   - name: feed_netmodel
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_netmodel.git
     revision: v4.10.3
   - name: feed_wifi_swl
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_wifi_swl.git
-    revision: v0.1.68
+    revision: v0.1.69
   - name: feed_wifi_core
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_wifi_core.git
-    revision: v1.0.36
+    revision: v1.0.37
   - name: feed_mcastd
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_mcastd.git
     revision: v0.1.6
