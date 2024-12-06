@@ -15,6 +15,7 @@ Check that ubus has expected datamodels available:
   CaptivePortal.LANInterface
   Cthulhu
   Cthulhu.Config
+  Cthulhu.Config.Debug
   Cthulhu.Container
   Cthulhu.Container.Instances
   Cthulhu.Information
@@ -277,6 +278,7 @@ Check that ubus has expected datamodels available:
   Timingila
   UPnP
   UPnP.Device
+  UPnP.Device.Capabilities
   UPnP.X_PRPL-COM_IGDConfig
   Unbound
   UserInterface
