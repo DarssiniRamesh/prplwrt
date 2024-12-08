@@ -250,12 +250,12 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.DHCPv6.Client.{i}.SuggestedT1
   Device.DHCPv6.Client.{i}.SuggestedT2
   Device.DHCPv6.Client.{i}.SupportedOptions
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LastT1SentWhen
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LastT2SentWhen
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LeaseRenewedWhen
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.T1Renewed
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.T2Renewed
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LastT1SentWhen
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LastT2SentWhen
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LeaseRenewedWhen
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.T1Renewed
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.T2Renewed
   Device.DHCPv6.Client.{i}.X_PRPL-COM_Release
   Device.DHCPv6.Client.{i}.X_PRPL-COM_Release()
   Device.DHCPv6.Server.
@@ -559,6 +559,9 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.DynamicDNS.Client.{i}.Server
   Device.DynamicDNS.Client.{i}.Status
   Device.DynamicDNS.Client.{i}.Username
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_DNSServer
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_IP
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_IPVersion
   Device.DynamicDNS.ClientNumberOfEntries
   Device.DynamicDNS.Server.{i}.
   Device.DynamicDNS.Server.{i}.Alias
@@ -893,7 +896,6 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.Hosts.Host.{i}.
   Device.Hosts.Host.{i}.Active
   Device.Hosts.Host.{i}.ActiveLastChange
-  Device.Hosts.Host.{i}.Alias
   Device.Hosts.Host.{i}.AssociatedDevice
   Device.Hosts.Host.{i}.DHCPClient
   Device.Hosts.Host.{i}.HostName
@@ -909,10 +911,10 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.Hosts.Host.{i}.Layer3Interface
   Device.Hosts.Host.{i}.PhysAddress
   Device.Hosts.Host.{i}.WANStats.
-  Device.Hosts.Host.{i}.WANStats.RxBytes
-  Device.Hosts.Host.{i}.WANStats.RxPackets
-  Device.Hosts.Host.{i}.WANStats.TxBytes
-  Device.Hosts.Host.{i}.WANStats.TxPackets
+  Device.Hosts.Host.{i}.WANStats.BytesReceived
+  Device.Hosts.Host.{i}.WANStats.BytesSent
+  Device.Hosts.Host.{i}.WANStats.PacketsReceived
+  Device.Hosts.Host.{i}.WANStats.PacketsSent
   Device.Hosts.Host.{i}.X_PRPL-COM_Protected
   Device.Hosts.HostNumberOfEntries
   Device.Hosts.X_PRPL-COM_HostConfig.
@@ -1006,6 +1008,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.IP.Interface.{i}.X_PRPL-COM_IPv4Config.NeighborReachableTime
   Device.IP.Interface.{i}.X_PRPL-COM_IPv6Config.
   Device.IP.Interface.{i}.X_PRPL-COM_IPv6Config.NeighborReachableTime
+  Device.IP.Interface.{i}.X_PRPL-COM_MTUMode
   Device.IP.InterfaceNumberOfEntries
   Device.IP.ULAPrefix
   Device.InterfaceStack.{i}.
@@ -1960,8 +1963,10 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:HostObject
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:ModuleVersion
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:NetworkConfig
+  Device.SoftwareModules.DeploymentUnit.{i}.Update() input:NumRequiredUIDs
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:OptionalRoles
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:Password
+  Device.SoftwareModules.DeploymentUnit.{i}.Update() input:Privileged
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:RequiredRoles
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:RetainData
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:URL
@@ -2011,11 +2016,16 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.SoftwareModules.ExecutionUnit.{i}.Alias
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedCPUPercent
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedDiskSpace
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedEUGID
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedEUUID
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedHostGID
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedHostUID
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedMemory
   Device.SoftwareModules.ExecutionUnit.{i}.AssociatedProcessList
   Device.SoftwareModules.ExecutionUnit.{i}.AutoStart
   Device.SoftwareModules.ExecutionUnit.{i}.AvailableDiskSpace
   Device.SoftwareModules.ExecutionUnit.{i}.AvailableMemory
+  Device.SoftwareModules.ExecutionUnit.{i}.CreationTime
   Device.SoftwareModules.ExecutionUnit.{i}.Description
   Device.SoftwareModules.ExecutionUnit.{i}.DiskSpaceInUse
   Device.SoftwareModules.ExecutionUnit.{i}.EUID
@@ -2051,6 +2061,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState()
   Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState() input:RequestedState
   Device.SoftwareModules.ExecutionUnit.{i}.Status
+  Device.SoftwareModules.ExecutionUnit.{i}.Uptime
   Device.SoftwareModules.ExecutionUnit.{i}.Vendor
   Device.SoftwareModules.ExecutionUnit.{i}.VendorConfigList
   Device.SoftwareModules.ExecutionUnit.{i}.VendorLogList
@@ -2067,8 +2078,10 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.SoftwareModules.InstallDU() input:HostObject
   Device.SoftwareModules.InstallDU() input:ModuleVersion
   Device.SoftwareModules.InstallDU() input:NetworkConfig
+  Device.SoftwareModules.InstallDU() input:NumRequiredUIDs
   Device.SoftwareModules.InstallDU() input:OptionalRoles
   Device.SoftwareModules.InstallDU() input:Password
+  Device.SoftwareModules.InstallDU() input:Privileged
   Device.SoftwareModules.InstallDU() input:RequiredRoles
   Device.SoftwareModules.InstallDU() input:Signature
   Device.SoftwareModules.InstallDU() input:URL
@@ -2124,6 +2137,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_CACertificate
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_Certificate
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_PeerVerify
+  Device.Syslog.Source.{i}.Network.X_PRPL-COM_StructuredData
   Device.Syslog.Source.{i}.Severity
   Device.Syslog.Source.{i}.SystemMessages
   Device.Syslog.SourceNumberOfEntries
@@ -2193,11 +2207,26 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.Time.update_status()
   Device.UPnP.
   Device.UPnP.Device.
+  Device.UPnP.Device.Capabilities.
+  Device.UPnP.Device.Capabilities.UPnPArchitecture
+  Device.UPnP.Device.Capabilities.UPnPArchitectureMinorVer
+  Device.UPnP.Device.Capabilities.UPnPBasicDevice
+  Device.UPnP.Device.Capabilities.UPnPDMBasicMgmt
+  Device.UPnP.Device.Capabilities.UPnPDMConfigurationMgmt
+  Device.UPnP.Device.Capabilities.UPnPDMSoftwareMgmt
+  Device.UPnP.Device.Capabilities.UPnPIGD
+  Device.UPnP.Device.Capabilities.UPnPMediaRenderer
+  Device.UPnP.Device.Capabilities.UPnPMediaServer
+  Device.UPnP.Device.Capabilities.UPnPQoSDevice
+  Device.UPnP.Device.Capabilities.UPnPQoSPolicyHolder
+  Device.UPnP.Device.Capabilities.UPnPWLANAccessPoint
   Device.UPnP.Device.Enable
   Device.UPnP.Device.UPnPIGD
   Device.UPnP.X_PRPL-COM_IGDConfig.
+  Device.UPnP.X_PRPL-COM_IGDConfig.AllowReservedAddr
   Device.UPnP.X_PRPL-COM_IGDConfig.AutoCleanupEnable
   Device.UPnP.X_PRPL-COM_IGDConfig.CleanupInterval
+  Device.UPnP.X_PRPL-COM_IGDConfig.EnableIPv6
   Device.UPnP.X_PRPL-COM_IGDConfig.MaxLifetime
   Device.UPnP.X_PRPL-COM_IGDConfig.UPnPInterface
   Device.USPServices.
@@ -2214,6 +2243,8 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.UnixDomainSockets.UnixDomainSocket.{i}.Path
   Device.UnixDomainSockets.UnixDomainSocketNumberOfEntries
   Device.UserInterface.
+  Device.UserInterface.AvailableLanguages
+  Device.UserInterface.CurrentLanguage
   Device.UserInterface.HTTPAccess.{i}.
   Device.UserInterface.HTTPAccess.{i}.AccessType
   Device.UserInterface.HTTPAccess.{i}.Alias
@@ -2330,6 +2361,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.DownlinkMCS
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.DownlinkRateSpec
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.DownlinkShortGuard
+  Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.EhtCapabilities
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.EncryptionMode
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.FrequencyCapabilities
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.HeCapabilities
@@ -2358,6 +2390,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.OperatingStandard
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.PowerSave
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.
+  Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.EhtCapabilities
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.EncryptionMode
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.FrequencyCapabilities
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.HeCapabilities
@@ -2385,6 +2418,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RrmOffChannelMaxDuration
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RrmOnChannelMaxDuration
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxBytes
+  Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxErrors
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxMulticastPacketCount
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxPacketCount
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxSupportedHe160MCS
@@ -2680,6 +2714,8 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.WiFi.EndPoint.{i}.IntfName
   Device.WiFi.EndPoint.{i}.LastError
   Device.WiFi.EndPoint.{i}.MultiAPEnable
+  Device.WiFi.EndPoint.{i}.MultiAPProfile
+  Device.WiFi.EndPoint.{i}.MultiAPVlanId
   Device.WiFi.EndPoint.{i}.Profile.{i}.
   Device.WiFi.EndPoint.{i}.Profile.{i}.Alias
   Device.WiFi.EndPoint.{i}.Profile.{i}.Enable
@@ -2705,6 +2741,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.WiFi.EndPoint.{i}.Security.ModeEnabled
   Device.WiFi.EndPoint.{i}.Security.ModesSupported
   Device.WiFi.EndPoint.{i}.Stats.
+  Device.WiFi.EndPoint.{i}.Stats.EhtCapabilities
   Device.WiFi.EndPoint.{i}.Stats.EncryptionMode
   Device.WiFi.EndPoint.{i}.Stats.FrequencyCapabilities
   Device.WiFi.EndPoint.{i}.Stats.HeCapabilities
@@ -3096,7 +3133,6 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.WiFi.Radio.{i}.TxBeamformingCapsEnabled
   Device.WiFi.Radio.{i}.TxChainCtrl
   Device.WiFi.Radio.{i}.Upstream
-  Device.WiFi.Radio.{i}.VHTCapabilities
   Device.WiFi.Radio.{i}.WDS_Mode
   Device.WiFi.Radio.{i}.WET_Mode
   Device.WiFi.Radio.{i}.WPS_Enrollee_Mode
@@ -3646,12 +3682,12 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.DHCPv6.Client.{i}.SuggestedT1
   Device.DHCPv6.Client.{i}.SuggestedT2
   Device.DHCPv6.Client.{i}.SupportedOptions
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LastT1SentWhen
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LastT2SentWhen
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LeaseRenewedWhen
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.T1Renewed
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.T2Renewed
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LastT1SentWhen
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LastT2SentWhen
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LeaseRenewedWhen
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.T1Renewed
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.T2Renewed
   Device.DHCPv6.Client.{i}.X_PRPL-COM_Release
   Device.DHCPv6.Client.{i}.X_PRPL-COM_Release()
   Device.DHCPv6.Server.
@@ -3955,6 +3991,9 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.DynamicDNS.Client.{i}.Server
   Device.DynamicDNS.Client.{i}.Status
   Device.DynamicDNS.Client.{i}.Username
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_DNSServer
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_IP
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_IPVersion
   Device.DynamicDNS.ClientNumberOfEntries
   Device.DynamicDNS.Server.{i}.
   Device.DynamicDNS.Server.{i}.Alias
@@ -4289,7 +4328,6 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.Hosts.Host.{i}.
   Device.Hosts.Host.{i}.Active
   Device.Hosts.Host.{i}.ActiveLastChange
-  Device.Hosts.Host.{i}.Alias
   Device.Hosts.Host.{i}.AssociatedDevice
   Device.Hosts.Host.{i}.DHCPClient
   Device.Hosts.Host.{i}.HostName
@@ -4305,10 +4343,10 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.Hosts.Host.{i}.Layer3Interface
   Device.Hosts.Host.{i}.PhysAddress
   Device.Hosts.Host.{i}.WANStats.
-  Device.Hosts.Host.{i}.WANStats.RxBytes
-  Device.Hosts.Host.{i}.WANStats.RxPackets
-  Device.Hosts.Host.{i}.WANStats.TxBytes
-  Device.Hosts.Host.{i}.WANStats.TxPackets
+  Device.Hosts.Host.{i}.WANStats.BytesReceived
+  Device.Hosts.Host.{i}.WANStats.BytesSent
+  Device.Hosts.Host.{i}.WANStats.PacketsReceived
+  Device.Hosts.Host.{i}.WANStats.PacketsSent
   Device.Hosts.Host.{i}.X_PRPL-COM_Protected
   Device.Hosts.HostNumberOfEntries
   Device.Hosts.X_PRPL-COM_HostConfig.
@@ -4402,6 +4440,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.IP.Interface.{i}.X_PRPL-COM_IPv4Config.NeighborReachableTime
   Device.IP.Interface.{i}.X_PRPL-COM_IPv6Config.
   Device.IP.Interface.{i}.X_PRPL-COM_IPv6Config.NeighborReachableTime
+  Device.IP.Interface.{i}.X_PRPL-COM_MTUMode
   Device.IP.InterfaceNumberOfEntries
   Device.IP.ULAPrefix
   Device.InterfaceStack.{i}.
@@ -5356,8 +5395,10 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:HostObject
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:ModuleVersion
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:NetworkConfig
+  Device.SoftwareModules.DeploymentUnit.{i}.Update() input:NumRequiredUIDs
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:OptionalRoles
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:Password
+  Device.SoftwareModules.DeploymentUnit.{i}.Update() input:Privileged
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:RequiredRoles
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:RetainData
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:URL
@@ -5407,11 +5448,16 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.SoftwareModules.ExecutionUnit.{i}.Alias
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedCPUPercent
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedDiskSpace
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedEUGID
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedEUUID
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedHostGID
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedHostUID
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedMemory
   Device.SoftwareModules.ExecutionUnit.{i}.AssociatedProcessList
   Device.SoftwareModules.ExecutionUnit.{i}.AutoStart
   Device.SoftwareModules.ExecutionUnit.{i}.AvailableDiskSpace
   Device.SoftwareModules.ExecutionUnit.{i}.AvailableMemory
+  Device.SoftwareModules.ExecutionUnit.{i}.CreationTime
   Device.SoftwareModules.ExecutionUnit.{i}.Description
   Device.SoftwareModules.ExecutionUnit.{i}.DiskSpaceInUse
   Device.SoftwareModules.ExecutionUnit.{i}.EUID
@@ -5447,6 +5493,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState()
   Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState() input:RequestedState
   Device.SoftwareModules.ExecutionUnit.{i}.Status
+  Device.SoftwareModules.ExecutionUnit.{i}.Uptime
   Device.SoftwareModules.ExecutionUnit.{i}.Vendor
   Device.SoftwareModules.ExecutionUnit.{i}.VendorConfigList
   Device.SoftwareModules.ExecutionUnit.{i}.VendorLogList
@@ -5463,8 +5510,10 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.SoftwareModules.InstallDU() input:HostObject
   Device.SoftwareModules.InstallDU() input:ModuleVersion
   Device.SoftwareModules.InstallDU() input:NetworkConfig
+  Device.SoftwareModules.InstallDU() input:NumRequiredUIDs
   Device.SoftwareModules.InstallDU() input:OptionalRoles
   Device.SoftwareModules.InstallDU() input:Password
+  Device.SoftwareModules.InstallDU() input:Privileged
   Device.SoftwareModules.InstallDU() input:RequiredRoles
   Device.SoftwareModules.InstallDU() input:Signature
   Device.SoftwareModules.InstallDU() input:URL
@@ -5520,6 +5569,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_CACertificate
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_Certificate
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_PeerVerify
+  Device.Syslog.Source.{i}.Network.X_PRPL-COM_StructuredData
   Device.Syslog.Source.{i}.Severity
   Device.Syslog.Source.{i}.SystemMessages
   Device.Syslog.SourceNumberOfEntries
@@ -5589,11 +5639,26 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.Time.update_status()
   Device.UPnP.
   Device.UPnP.Device.
+  Device.UPnP.Device.Capabilities.
+  Device.UPnP.Device.Capabilities.UPnPArchitecture
+  Device.UPnP.Device.Capabilities.UPnPArchitectureMinorVer
+  Device.UPnP.Device.Capabilities.UPnPBasicDevice
+  Device.UPnP.Device.Capabilities.UPnPDMBasicMgmt
+  Device.UPnP.Device.Capabilities.UPnPDMConfigurationMgmt
+  Device.UPnP.Device.Capabilities.UPnPDMSoftwareMgmt
+  Device.UPnP.Device.Capabilities.UPnPIGD
+  Device.UPnP.Device.Capabilities.UPnPMediaRenderer
+  Device.UPnP.Device.Capabilities.UPnPMediaServer
+  Device.UPnP.Device.Capabilities.UPnPQoSDevice
+  Device.UPnP.Device.Capabilities.UPnPQoSPolicyHolder
+  Device.UPnP.Device.Capabilities.UPnPWLANAccessPoint
   Device.UPnP.Device.Enable
   Device.UPnP.Device.UPnPIGD
   Device.UPnP.X_PRPL-COM_IGDConfig.
+  Device.UPnP.X_PRPL-COM_IGDConfig.AllowReservedAddr
   Device.UPnP.X_PRPL-COM_IGDConfig.AutoCleanupEnable
   Device.UPnP.X_PRPL-COM_IGDConfig.CleanupInterval
+  Device.UPnP.X_PRPL-COM_IGDConfig.EnableIPv6
   Device.UPnP.X_PRPL-COM_IGDConfig.MaxLifetime
   Device.UPnP.X_PRPL-COM_IGDConfig.UPnPInterface
   Device.USPServices.
@@ -5610,6 +5675,8 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.UnixDomainSockets.UnixDomainSocket.{i}.Path
   Device.UnixDomainSockets.UnixDomainSocketNumberOfEntries
   Device.UserInterface.
+  Device.UserInterface.AvailableLanguages
+  Device.UserInterface.CurrentLanguage
   Device.UserInterface.HTTPAccess.{i}.
   Device.UserInterface.HTTPAccess.{i}.AccessType
   Device.UserInterface.HTTPAccess.{i}.Alias
@@ -5726,6 +5793,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.DownlinkMCS
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.DownlinkRateSpec
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.DownlinkShortGuard
+  Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.EhtCapabilities
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.EncryptionMode
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.FrequencyCapabilities
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.HeCapabilities
@@ -5754,6 +5822,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.OperatingStandard
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.PowerSave
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.
+  Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.EhtCapabilities
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.EncryptionMode
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.FrequencyCapabilities
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.ProbeReqCaps.HeCapabilities
@@ -5781,6 +5850,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RrmOffChannelMaxDuration
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RrmOnChannelMaxDuration
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxBytes
+  Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxErrors
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxMulticastPacketCount
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxPacketCount
   Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}.RxSupportedHe160MCS
@@ -6076,6 +6146,8 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.WiFi.EndPoint.{i}.IntfName
   Device.WiFi.EndPoint.{i}.LastError
   Device.WiFi.EndPoint.{i}.MultiAPEnable
+  Device.WiFi.EndPoint.{i}.MultiAPProfile
+  Device.WiFi.EndPoint.{i}.MultiAPVlanId
   Device.WiFi.EndPoint.{i}.Profile.{i}.
   Device.WiFi.EndPoint.{i}.Profile.{i}.Alias
   Device.WiFi.EndPoint.{i}.Profile.{i}.Enable
@@ -6101,6 +6173,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.WiFi.EndPoint.{i}.Security.ModeEnabled
   Device.WiFi.EndPoint.{i}.Security.ModesSupported
   Device.WiFi.EndPoint.{i}.Stats.
+  Device.WiFi.EndPoint.{i}.Stats.EhtCapabilities
   Device.WiFi.EndPoint.{i}.Stats.EncryptionMode
   Device.WiFi.EndPoint.{i}.Stats.FrequencyCapabilities
   Device.WiFi.EndPoint.{i}.Stats.HeCapabilities
@@ -6492,7 +6565,6 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.WiFi.Radio.{i}.TxBeamformingCapsEnabled
   Device.WiFi.Radio.{i}.TxChainCtrl
   Device.WiFi.Radio.{i}.Upstream
-  Device.WiFi.Radio.{i}.VHTCapabilities
   Device.WiFi.Radio.{i}.WDS_Mode
   Device.WiFi.Radio.{i}.WET_Mode
   Device.WiFi.Radio.{i}.WPS_Enrollee_Mode
