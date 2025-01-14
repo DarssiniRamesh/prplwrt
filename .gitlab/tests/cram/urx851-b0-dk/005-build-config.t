@@ -41,6 +41,7 @@ Assure expected build configuration (PCF-1413):
   CONFIG_FEATURE_SYSTEM_LOG_BUFFER_COUNT=2
   CONFIG_FEATURE_SYSTEM_LOG_BUFFER_SIZE=8
   CONFIG_FEATURE_WAN_AUTO_DETECT=y
+  CONFIG_FORCE_RUNNING_AS_ROOT=y
   CONFIG_GCC_DEFAULT_PIE=y
   CONFIG_GPON_OMCI_ONU_ADD_OPTIONS=""
   CONFIG_GPON_OMCI_ONU_CLI=y
@@ -309,13 +310,11 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_kmod-mxl_pon_hgu_vuni_lgm=y
   CONFIG_PACKAGE_kmod-mxl_vpn=y
   CONFIG_PACKAGE_kmod-nf-conncount=y
-  CONFIG_PACKAGE_kmod-nf-conntrack-netlink=y
   CONFIG_PACKAGE_kmod-nf-ipt=y
   CONFIG_PACKAGE_kmod-nf-ipt6=y
   CONFIG_PACKAGE_kmod-nf-nat6=y
   CONFIG_PACKAGE_kmod-nf-nathelper=y
   CONFIG_PACKAGE_kmod-nf-nathelper-extra=y
-  CONFIG_PACKAGE_kmod-nfnetlink-log=y
   CONFIG_PACKAGE_kmod-nfnetlink-queue=y
   CONFIG_PACKAGE_kmod-nft-fib=m
   CONFIG_PACKAGE_kmod-p34x_phy_fwdl=y
@@ -355,6 +354,7 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_kmod-udptunnel6=y
   CONFIG_PACKAGE_kmod-veth=y
   CONFIG_PACKAGE_lib-cli=y
+  CONFIG_PACKAGE_libacl=y
   CONFIG_PACKAGE_libamxa=y
   CONFIG_PACKAGE_libamxb=y
   CONFIG_PACKAGE_libamxc=y
@@ -416,8 +416,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_libmosquitto-ssl=y
   CONFIG_PACKAGE_libmsgapi=y
   CONFIG_PACKAGE_libncurses=y
-  CONFIG_PACKAGE_libnetfilter-conntrack=y
-  CONFIG_PACKAGE_libnetfilter-log=y
   CONFIG_PACKAGE_libnetfilter-queue=y
   CONFIG_PACKAGE_libnetlink-utils=y
   CONFIG_PACKAGE_libnetmodel=y
@@ -711,6 +709,7 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PON_SDK_VERSION="1.22.1"
   CONFIG_PRPL_CONTROLLER_ROOT_PATH="X_PRPL-ORG_WiFiController"
   CONFIG_PRPL_IP_DIAGNOSTIC_UPLOAD_DOWNLOAD=y
+  CONFIG_REMOVE_CAPS_ODLS=y
   CONFIG_SAH_AMXRT_RWDATAPATH="/etc/config"
   CONFIG_SAH_AMX_ADD_DBREADY_SCRIPT=y
   CONFIG_SAH_AMX_FAULTMONITOR=y
@@ -759,6 +758,7 @@ Assure expected build configuration (PCF-1413):
   CONFIG_SAH_AMX_TR181_DEVICEINFO=y
   CONFIG_SAH_AMX_TR181_DEVICEINFO_NUMBER_OF_EXTRA_MAC_ADDRESSES="7"
   CONFIG_SAH_AMX_TR181_DEVICEINFO_ORDER=25
+  CONFIG_SAH_AMX_TR181_DEVICEINFO_REQUIRES_USERS=y
   CONFIG_SAH_AMX_TR181_DEVICEINFO_RUN_AS_GROUP="root"
   CONFIG_SAH_AMX_TR181_DEVICEINFO_RUN_AS_USER="root"
   CONFIG_SAH_AMX_TR181_DEVICEINFO_SOFTWARE_VERSION="XX"
