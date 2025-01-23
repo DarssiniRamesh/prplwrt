@@ -11,6 +11,8 @@
     - when: manual
   variables:
     CDROUTER_CONFIG_WIFI_BEACON_PHY: 'ax b g n'
+    CDROUTER_CONFIG_WIFI_LAN_CHANNEL: 6
+    CDROUTER_CONFIG_WIFI_LAN_SSID: 'prplOS'
     CDROUTER_TEST_CONFIG: generic
     DUT_SLEEP_AFTER_BOOT: 90
     CDROUTER_LAN_INTERFACE: eth1
@@ -76,12 +78,17 @@
 
     - >
       for dut_init_script in $DUT_INIT_SCRIPTS;
-        do echo "Running $dut_init_script"; /bin/sh "$dut_init_script";
+        do echo "Running $dut_init_script"; "${CI_PROJECT_DIR}/$dut_init_script";
       done
 
     - >
       if echo "$CI_RUNNER_DESCRIPTION" | grep -q testbed-02; then
         export CDROUTER_API_TOKEN="$CDROUTER_API_TOKEN_TESTBED_02"
+        export CDROUTER_CONFIG_WIFI_LAN_CHANNEL=11
+        export CDROUTER_CONFIG_WIFI_LAN_SSID=prplOS-2g-11
+      else
+        export CDROUTER_CONFIG_WIFI_LAN_CHANNEL=6
+        export CDROUTER_CONFIG_WIFI_LAN_SSID=prplOS-2g-6
       fi
 
     - .gitlab/scripts/testbed-cdrouter.py package_stop
@@ -108,7 +115,24 @@
       package_run $TEST_PACKAGE
       --device generic
       --configuration $CDROUTER_TEST_CONFIG
-      --system-info system-$LABGRID_TARGET.json
+      --system-info system-$LABGRID_TARGET.json || cdrouter_exit_code=$?
+
+    - sudo ip link set $TESTBED_LAN_INTERFACE up 2> /dev/null || true
+    - sudo ip link set $TESTBED_WAN_INTERFACE up 2> /dev/null || true
+    - sleep 5
+
+    - python3 -m cram --verbose .gitlab/tests/cram/post/generic/50-check-for-crashes.t || cram_exit_code=$?
+
+    - >
+      if test -n "$cdrouter_exit_code"; then
+        echo "CDRouter exited with $cdrouter_exit_code exit code."
+        exit "$cdrouter_exit_code"
+      fi
+
+      if test -n "$cram_exit_code"; then
+        echo "cram exited with $cram_exit_code exit code."
+        exit "$cram_exit_code"
+      fi
 
   after_script:
     - >
@@ -126,10 +150,6 @@
         ssh-keyscan $TESTBED_UART_RELAY_HOST > ~/.ssh/known_hosts 2> /dev/null
         chmod 644 ~/.ssh/known_hosts
       fi
-
-    - sudo ip link set $TESTBED_LAN_INTERFACE up 2> /dev/null
-    - sudo ip link set $TESTBED_WAN_INTERFACE up 2> /dev/null
-    - sleep 5
 
     - >
       if echo "$CI_RUNNER_DESCRIPTION" | grep -q testbed-02; then
