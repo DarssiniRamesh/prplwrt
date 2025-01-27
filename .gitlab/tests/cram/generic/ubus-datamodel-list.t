@@ -67,7 +67,6 @@ Check that ubus has expected datamodels available:
   Device.DSLite
   Device.DeviceInfo
   Device.DeviceInfo.ProcessFaults
-  Device.DeviceInfo.Reboots
   Device.DynamicDNS
   Device.Ethernet
   Device.Firewall
@@ -177,11 +176,6 @@ Check that ubus has expected datamodels available:
   Logical.Interface
   Logical.X_PRPL-COM_Subnet
   Logical.X_PRPL-COM_Subnet.Config
-  MCASTD
-  MCASTD.Debug
-  MCASTD.Debug.Zone
-  MCASTD.Intf
-  MCASTD.Tuner
   ManagementServer
   ManagementServer.ACSTransfers
   ManagementServer.ACSTransfers.ACSTransfer
@@ -243,8 +237,6 @@ Check that ubus has expected datamodels available:
   QoS.QueueStats
   QoS.Scheduler
   QoS.Shaper
-  Reboot
-  Reboot.Reboot
   Rlyeh
   Rlyeh.Images
   RouterAdvertisement

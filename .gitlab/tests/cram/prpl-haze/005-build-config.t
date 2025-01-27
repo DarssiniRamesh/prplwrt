@@ -66,8 +66,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_LIGHTTPD_SSL_SELECT=m
   CONFIG_LOGROTATE_ACL=y
   CONFIG_LXC_SECCOMP=y
-  CONFIG_MCASTD_CORE=y
-  CONFIG_MCASTD_CORE_NICE=-18
   CONFIG_PACKAGE_acl=y
   CONFIG_PACKAGE_acl-manager=y
   CONFIG_PACKAGE_amx-cli=y
@@ -101,7 +99,6 @@ Assure expected build configuration (PCF-1413):
   # CONFIG_PACKAGE_dnsmasq is not set
   CONFIG_PACKAGE_dnsmasq-prpl=y
   CONFIG_PACKAGE_ebtables-legacy=y
-  CONFIG_PACKAGE_ebtables-legacy-utils=y
   CONFIG_PACKAGE_ethernet-manager=y
   CONFIG_PACKAGE_fcgi=y
   # CONFIG_PACKAGE_firewall4 is not set
@@ -134,8 +131,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_kmod-asn1-decoder=y
   CONFIG_PACKAGE_kmod-crypto-md5=y
   CONFIG_PACKAGE_kmod-ebtables=y
-  CONFIG_PACKAGE_kmod-ebtables-ipv4=y
-  CONFIG_PACKAGE_kmod-ebtables-ipv6=y
   CONFIG_PACKAGE_kmod-ifb=y
   CONFIG_PACKAGE_kmod-ip6-tunnel=y
   CONFIG_PACKAGE_kmod-ip6tables=y
@@ -153,7 +148,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_kmod-iptunnel6=y
   CONFIG_PACKAGE_kmod-lib-textsearch=y
   CONFIG_PACKAGE_kmod-loop=y
-  CONFIG_PACKAGE_kmod-mcastd-core=y
   CONFIG_PACKAGE_kmod-nf-conncount=y
   CONFIG_PACKAGE_kmod-nf-ipt=y
   CONFIG_PACKAGE_kmod-nf-ipt6=y
@@ -305,7 +299,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_lxc-user-nic=y
   CONFIG_PACKAGE_lxc-usernsexec=y
   CONFIG_PACKAGE_lxc-wait=y
-  CONFIG_PACKAGE_mcastd-noforward=y
   CONFIG_PACKAGE_miniupnpd-prpl=y
   CONFIG_PACKAGE_mod-amxb-ubus=y
   CONFIG_PACKAGE_mod-amxb-usp=y
@@ -371,7 +364,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_prplmesh-unit-tests=m
   CONFIG_PACKAGE_pwhm=y
   CONFIG_PACKAGE_radvd=y
-  CONFIG_PACKAGE_reboot-service=y
   CONFIG_PACKAGE_resize2fs=y
   CONFIG_PACKAGE_rlyeh=y
   CONFIG_PACKAGE_routing-manager=y
@@ -436,7 +428,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_tr181-ipdiagnostics=y
   CONFIG_PACKAGE_tr181-led=y
   CONFIG_PACKAGE_tr181-logical=y
-  CONFIG_PACKAGE_tr181-mcastd=y
   CONFIG_PACKAGE_tr181-neighbordiscovery=y
   CONFIG_PACKAGE_tr181-pcp=y
   CONFIG_PACKAGE_tr181-ppp=y
@@ -569,10 +560,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_SAH_AMX_TR181_LOGICAL_ORDER=21
   CONFIG_SAH_AMX_TR181_LOGICAL_RUN_AS_GROUP="tr181_app"
   CONFIG_SAH_AMX_TR181_LOGICAL_RUN_AS_USER="tr181_app"
-  CONFIG_SAH_AMX_TR181_MCASTD_CORE_PLUGIN=y
-  CONFIG_SAH_AMX_TR181_MCASTD_CORE_PLUGIN_ORDER=22
-  CONFIG_SAH_AMX_TR181_MCASTD_CORE_PLUGIN_RUN_AS_GROUP="tr181_app"
-  CONFIG_SAH_AMX_TR181_MCASTD_CORE_PLUGIN_RUN_AS_USER="tr181_app"
   CONFIG_SAH_AMX_TR181_NEIGHBORDISCOVERY=y
   CONFIG_SAH_AMX_TR181_NEIGHBORDISCOVERY_ORDER=50
   CONFIG_SAH_AMX_TR181_NEIGHBORDISCOVERY_RUN_AS_GROUP="tr181_app"
@@ -633,10 +620,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_SAH_MOD_SAHTRACE_DEFAULT_LOG_LEVEL=200
   CONFIG_SAH_MOD_SAHTRACE_DEFAULT_TRACE_ZONE_LEVEL=200
   CONFIG_SAH_ODLGEN=y
-  CONFIG_SAH_REBOOT_SERVICE=y
-  CONFIG_SAH_REBOOT_SERVICE_ORDER=18
-  CONFIG_SAH_REBOOT_SERVICE_RUN_AS_GROUP="tr181_app"
-  CONFIG_SAH_REBOOT_SERVICE_RUN_AS_USER="tr181_app"
   CONFIG_SAH_SERVICES_ACL-MANAGER=y
   CONFIG_SAH_SERVICES_ACL-MANAGER_REQUIRES_USERS=y
   CONFIG_SAH_SERVICES_AMX-DHCPV4-MANAGER=y
