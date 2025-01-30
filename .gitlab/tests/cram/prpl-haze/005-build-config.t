@@ -316,7 +316,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_mod-dmproxy=y
   CONFIG_PACKAGE_mod-dmstats=y
   CONFIG_PACKAGE_mod-dns-unbound=y
-  CONFIG_PACKAGE_mod-dnssd-advertisement=y
   CONFIG_PACKAGE_mod-fw-amx=y
   CONFIG_PACKAGE_mod-fw-host=y
   CONFIG_PACKAGE_mod-httpaccess-lighttpd=y
@@ -371,7 +370,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_prplmesh-unit-tests=m
   CONFIG_PACKAGE_pwhm=y
   CONFIG_PACKAGE_radvd=y
-  CONFIG_PACKAGE_reboot-service=y
   CONFIG_PACKAGE_resize2fs=y
   CONFIG_PACKAGE_rlyeh=y
   CONFIG_PACKAGE_routing-manager=y
@@ -633,10 +631,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_SAH_MOD_SAHTRACE_DEFAULT_LOG_LEVEL=200
   CONFIG_SAH_MOD_SAHTRACE_DEFAULT_TRACE_ZONE_LEVEL=200
   CONFIG_SAH_ODLGEN=y
-  CONFIG_SAH_REBOOT_SERVICE=y
-  CONFIG_SAH_REBOOT_SERVICE_ORDER=18
-  CONFIG_SAH_REBOOT_SERVICE_RUN_AS_GROUP="tr181_app"
-  CONFIG_SAH_REBOOT_SERVICE_RUN_AS_USER="tr181_app"
   CONFIG_SAH_SERVICES_ACL-MANAGER=y
   CONFIG_SAH_SERVICES_ACL-MANAGER_REQUIRES_USERS=y
   CONFIG_SAH_SERVICES_AMX-DHCPV4-MANAGER=y

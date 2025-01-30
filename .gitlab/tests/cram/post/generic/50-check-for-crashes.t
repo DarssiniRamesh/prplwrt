@@ -1,3 +1,7 @@
+Skip this test if the CI job name contains CDRouter and VLAN as SSH to DUT is not available (PCF-844):
+
+  $ if echo "$CI_JOB_NAME" | grep -q "^CDRouter.* VLAN "; then exit 80; fi
+
 Create R alias:
 
   $ alias R="${CRAM_REMOTE_COMMAND:-}"
@@ -25,3 +29,8 @@ Ensure that ProcessFaults does not contain any crashes:
   ProcessFaults.PreviousBootCount=0
   ProcessFaults.ProcessFaultNumberOfEntries=0
   ProcessFaults.StoragePath="/ext/faults"
+
+Ensure that there are no core dumps in the system:
+
+  $ storage_path=$(R "ba-cli -l ProcessFaults.StoragePath?" | tr -d '\n')
+  $ R "test ! -d \"$storage_path\""
