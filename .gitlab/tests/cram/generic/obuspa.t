@@ -243,16 +243,30 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.DHCPv6.Client.{i}.Server.{i}.InformationRefreshTime                                           proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.Server.{i}.SourceAddress                                                    proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.ServerNumberOfEntries                                                       proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.                                                                      proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Advertise                                                             proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Confirm                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Decline                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.DiscardedPackets                                                      proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.InformationRequest                                                    proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Rebind                                                                proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Reconfigure                                                           proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Release                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Renew                                                                 proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Reply                                                                 proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Request                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Solicit                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.TransmitFailure                                                       proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.Status                                                                      proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.SuggestedT1                                                                 proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.SuggestedT2                                                                 proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.SupportedOptions                                                            proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.                                                    proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LastT1SentWhen                                      proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LastT2SentWhen                                      proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LeaseRenewedWhen                                    proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.T1Renewed                                           proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.T2Renewed                                           proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.                                                          proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LastT1SentWhen                                            proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LastT2SentWhen                                            proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LeaseRenewedWhen                                          proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.T1Renewed                                                 proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.T2Renewed                                                 proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.X_PRPL-COM_Release                                                          proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.X_PRPL-COM_Release()                                                        proto::tr181-dhcpv6client
   Device.DHCPv6.ClientNumberOfEntries                                                                  proto::tr181-dhcpv6client
@@ -438,9 +452,11 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.DNS.X_PRPL-COM_RebindProtection.                                                              proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.DomainExceptions.{i}.                                         proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.DomainExceptions.{i}.Address                                  proto::tr181-dns
+  Device.DNS.X_PRPL-COM_RebindProtection.DomainExceptionsNumberOfEntries                               proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.Enable                                                        proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.IPExceptions.{i}.                                             proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.IPExceptions.{i}.Address                                      proto::tr181-dns
+  Device.DNS.X_PRPL-COM_RebindProtection.IPExceptionsNumberOfEntries                                   proto::tr181-dns
   Device.DSLite.                                                                                       proto::tr181-dslite
   Device.DSLite.Enable                                                                                 proto::tr181-dslite
   Device.DSLite.InterfaceSetting.{i}.                                                                  proto::tr181-dslite
@@ -557,26 +573,27 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.DeviceInfo.ProductClass                                                                       proto::deviceinfo-manager
   Device.DeviceInfo.ProvisioningCode                                                                   proto::deviceinfo-manager
   Device.DeviceInfo.Reboots.                                                                           proto::reboot-service
-  Device.DeviceInfo.Reboots.BootCounter                                                                proto::reboot-service
-  Device.DeviceInfo.Reboots.MaximumNumberOfReboots                                                     proto::reboot-service
-  Device.DeviceInfo.Reboots.NumberOfReboots                                                            proto::reboot-service
+  Device.DeviceInfo.Reboots.BootCount                                                                  proto::reboot-service
+  Device.DeviceInfo.Reboots.ColdBootCount                                                              proto::reboot-service
+  Device.DeviceInfo.Reboots.MaxRebootEntries                                                           proto::reboot-service
   Device.DeviceInfo.Reboots.Reboot.{i}.                                                                proto::reboot-service
-  Device.DeviceInfo.Reboots.Reboot.{i}.BootDate                                                        proto::reboot-service
-  Device.DeviceInfo.Reboots.Reboot.{i}.BootReason                                                      proto::reboot-service
-  Device.DeviceInfo.Reboots.WatchdogRebootCounter                                                      proto::reboot-service
-  Device.DeviceInfo.Reboots.flush()                                                                    proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.Alias                                                           proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.Cause                                                           proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.FirmwareUpdated                                                 proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.Reason                                                          proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.Remove()                                                        proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.TimeStamp                                                       proto::reboot-service
+  Device.DeviceInfo.Reboots.RebootNumberOfEntries                                                      proto::reboot-service
+  Device.DeviceInfo.Reboots.RemoveAllReboots()                                                         proto::reboot-service
+  Device.DeviceInfo.Reboots.WarmBootCount                                                              proto::reboot-service
+  Device.DeviceInfo.Reboots.WatchdogBootCount                                                          proto::reboot-service
+  Device.DeviceInfo.Reboots.X_PRPL-COM_CurrentBootCycle                                                proto::reboot-service
+  Device.DeviceInfo.Reboots.X_PRPL-COM_Reasons.{i}.                                                    proto::reboot-service
+  Device.DeviceInfo.Reboots.X_PRPL-COM_Reasons.{i}.Alias                                               proto::reboot-service
+  Device.DeviceInfo.Reboots.X_PRPL-COM_Reasons.{i}.Format                                              proto::reboot-service
   Device.DeviceInfo.Reboots.reboot()                                                                   proto::reboot-service
-  Device.DeviceInfo.Reboots.reboot() input:Custom
-  Device.DeviceInfo.Reboots.reboot() input:Process
+  Device.DeviceInfo.Reboots.reboot() input:Cause
   Device.DeviceInfo.Reboots.reboot() input:Reason
-  Device.DeviceInfo.Reboots.reset()                                                                    proto::reboot-service
-  Device.DeviceInfo.Reboots.reset() input:Custom
-  Device.DeviceInfo.Reboots.reset() input:Process
-  Device.DeviceInfo.Reboots.reset() input:Reason
-  Device.DeviceInfo.Reboots.shutdown()                                                                 proto::reboot-service
-  Device.DeviceInfo.Reboots.shutdown() input:Custom
-  Device.DeviceInfo.Reboots.shutdown() input:Process
-  Device.DeviceInfo.Reboots.shutdown() input:Reason
   Device.DeviceInfo.SerialNumber                                                                       proto::deviceinfo-manager
   Device.DeviceInfo.SoftwareVersion                                                                    proto::deviceinfo-manager
   Device.DeviceInfo.UpTime                                                                             proto::deviceinfo-manager
@@ -632,6 +649,9 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.DynamicDNS.Client.{i}.Server                                                                  proto::tr181-dynamicdns
   Device.DynamicDNS.Client.{i}.Status                                                                  proto::tr181-dynamicdns
   Device.DynamicDNS.Client.{i}.Username                                                                proto::tr181-dynamicdns
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_DNSServer                                                    proto::tr181-dynamicdns
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_IP                                                           proto::tr181-dynamicdns
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_IPVersion                                                    proto::tr181-dynamicdns
   Device.DynamicDNS.ClientNumberOfEntries                                                              proto::tr181-dynamicdns
   Device.DynamicDNS.Server.{i}.                                                                        proto::tr181-dynamicdns
   Device.DynamicDNS.Server.{i}.Alias                                                                   proto::tr181-dynamicdns
@@ -968,7 +988,6 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.Hosts.Host.{i}.                                                                               proto::hosts-manager
   Device.Hosts.Host.{i}.Active                                                                         proto::hosts-manager
   Device.Hosts.Host.{i}.ActiveLastChange                                                               proto::hosts-manager
-  Device.Hosts.Host.{i}.Alias                                                                          proto::hosts-manager
   Device.Hosts.Host.{i}.AssociatedDevice                                                               proto::hosts-manager
   Device.Hosts.Host.{i}.DHCPClient                                                                     proto::hosts-manager
   Device.Hosts.Host.{i}.HostName                                                                       proto::hosts-manager
@@ -984,10 +1003,10 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.Hosts.Host.{i}.Layer3Interface                                                                proto::hosts-manager
   Device.Hosts.Host.{i}.PhysAddress                                                                    proto::hosts-manager
   Device.Hosts.Host.{i}.WANStats.                                                                      proto::hosts-manager
-  Device.Hosts.Host.{i}.WANStats.RxBytes                                                               proto::hosts-manager
-  Device.Hosts.Host.{i}.WANStats.RxPackets                                                             proto::hosts-manager
-  Device.Hosts.Host.{i}.WANStats.TxBytes                                                               proto::hosts-manager
-  Device.Hosts.Host.{i}.WANStats.TxPackets                                                             proto::hosts-manager
+  Device.Hosts.Host.{i}.WANStats.BytesReceived                                                         proto::hosts-manager
+  Device.Hosts.Host.{i}.WANStats.BytesSent                                                             proto::hosts-manager
+  Device.Hosts.Host.{i}.WANStats.PacketsReceived                                                       proto::hosts-manager
+  Device.Hosts.Host.{i}.WANStats.PacketsSent                                                           proto::hosts-manager
   Device.Hosts.Host.{i}.X_PRPL-COM_Protected                                                           proto::hosts-manager
   Device.Hosts.HostNumberOfEntries                                                                     proto::hosts-manager
   Device.Hosts.X_PRPL-COM_HostConfig.                                                                  proto::hosts-manager
@@ -1356,6 +1375,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.IP.Interface.{i}.X_PRPL-COM_IPv4Config.NeighborReachableTime                                  proto::ip-manager
   Device.IP.Interface.{i}.X_PRPL-COM_IPv6Config.                                                       proto::ip-manager
   Device.IP.Interface.{i}.X_PRPL-COM_IPv6Config.NeighborReachableTime                                  proto::ip-manager
+  Device.IP.Interface.{i}.X_PRPL-COM_MTUMode                                                           proto::ip-manager
   Device.IP.InterfaceNumberOfEntries                                                                   proto::ip-manager
   Device.IP.ULAPrefix                                                                                  proto::ip-manager
   Device.InterfaceStack.{i}.                                                                           proto::tr181-device
@@ -2314,8 +2334,10 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:HostObject
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:ModuleVersion
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:NetworkConfig
+  Device.SoftwareModules.DeploymentUnit.{i}.Update() input:NumRequiredUIDs
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:OptionalRoles
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:Password
+  Device.SoftwareModules.DeploymentUnit.{i}.Update() input:Privileged
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:RequiredRoles
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:RetainData
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:URL
@@ -2365,11 +2387,16 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.SoftwareModules.ExecutionUnit.{i}.Alias                                                       proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedCPUPercent                                         proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedDiskSpace                                          proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedEUGID                                              proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedEUUID                                              proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedHostGID                                            proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedHostUID                                            proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedMemory                                             proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AssociatedProcessList                                       proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AutoStart                                                   proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AvailableDiskSpace                                          proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AvailableMemory                                             proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.CreationTime                                                proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.Description                                                 proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.DiskSpaceInUse                                              proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.EUID                                                        proto::timingila
@@ -2405,6 +2432,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState()                                         proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState() input:RequestedState
   Device.SoftwareModules.ExecutionUnit.{i}.Status                                                      proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.Uptime                                                      proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.Vendor                                                      proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.VendorConfigList                                            proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.VendorLogList                                               proto::timingila
@@ -2421,8 +2449,10 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.SoftwareModules.InstallDU() input:HostObject
   Device.SoftwareModules.InstallDU() input:ModuleVersion
   Device.SoftwareModules.InstallDU() input:NetworkConfig
+  Device.SoftwareModules.InstallDU() input:NumRequiredUIDs
   Device.SoftwareModules.InstallDU() input:OptionalRoles
   Device.SoftwareModules.InstallDU() input:Password
+  Device.SoftwareModules.InstallDU() input:Privileged
   Device.SoftwareModules.InstallDU() input:RequiredRoles
   Device.SoftwareModules.InstallDU() input:Signature
   Device.SoftwareModules.InstallDU() input:URL
@@ -2478,6 +2508,7 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_CACertificate                                            proto::tr181-syslog
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_Certificate                                              proto::tr181-syslog
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_PeerVerify                                               proto::tr181-syslog
+  Device.Syslog.Source.{i}.Network.X_PRPL-COM_StructuredData                                           proto::tr181-syslog
   Device.Syslog.Source.{i}.Severity                                                                    proto::tr181-syslog
   Device.Syslog.Source.{i}.SystemMessages                                                              proto::tr181-syslog
   Device.Syslog.SourceNumberOfEntries                                                                  proto::tr181-syslog
@@ -2547,11 +2578,26 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.Time.update_status()                                                                          proto::time-manager
   Device.UPnP.                                                                                         proto::tr181-upnp
   Device.UPnP.Device.                                                                                  proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.                                                                     proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPArchitecture                                                     proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPArchitectureMinorVer                                             proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPBasicDevice                                                      proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPDMBasicMgmt                                                      proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPDMConfigurationMgmt                                              proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPDMSoftwareMgmt                                                   proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPIGD                                                              proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPMediaRenderer                                                    proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPMediaServer                                                      proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPQoSDevice                                                        proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPQoSPolicyHolder                                                  proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPWLANAccessPoint                                                  proto::tr181-upnp
   Device.UPnP.Device.Enable                                                                            proto::tr181-upnp
   Device.UPnP.Device.UPnPIGD                                                                           proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.                                                                    proto::tr181-upnp
+  Device.UPnP.X_PRPL-COM_IGDConfig.AllowReservedAddr                                                   proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.AutoCleanupEnable                                                   proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.CleanupInterval                                                     proto::tr181-upnp
+  Device.UPnP.X_PRPL-COM_IGDConfig.EnableIPv6                                                          proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.MaxLifetime                                                         proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.UPnPInterface                                                       proto::tr181-upnp
   Device.USPServices.
@@ -2568,6 +2614,8 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.UnixDomainSockets.UnixDomainSocket.{i}.Path
   Device.UnixDomainSockets.UnixDomainSocketNumberOfEntries
   Device.UserInterface.                                                                                proto::tr181-httpaccess
+  Device.UserInterface.AvailableLanguages                                                              proto::tr181-httpaccess
+  Device.UserInterface.CurrentLanguage                                                                 proto::tr181-httpaccess
   Device.UserInterface.HTTPAccess.{i}.                                                                 proto::tr181-httpaccess
   Device.UserInterface.HTTPAccess.{i}.AccessType                                                       proto::tr181-httpaccess
   Device.UserInterface.HTTPAccess.{i}.Alias                                                            proto::tr181-httpaccess
@@ -3995,16 +4043,30 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.DHCPv6.Client.{i}.Server.{i}.InformationRefreshTime                                           proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.Server.{i}.SourceAddress                                                    proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.ServerNumberOfEntries                                                       proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.                                                                      proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Advertise                                                             proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Confirm                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Decline                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.DiscardedPackets                                                      proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.InformationRequest                                                    proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Rebind                                                                proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Reconfigure                                                           proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Release                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Renew                                                                 proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Reply                                                                 proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Request                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.Solicit                                                               proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.Stats.TransmitFailure                                                       proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.Status                                                                      proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.SuggestedT1                                                                 proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.SuggestedT2                                                                 proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.SupportedOptions                                                            proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.                                                    proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LastT1SentWhen                                      proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LastT2SentWhen                                      proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.LeaseRenewedWhen                                    proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.T1Renewed                                           proto::tr181-dhcpv6client
-  Device.DHCPv6.Client.{i}.X_PRPL-COM_DeviceConfig.T2Renewed                                           proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.                                                          proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LastT1SentWhen                                            proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LastT2SentWhen                                            proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.LeaseRenewedWhen                                          proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.T1Renewed                                                 proto::tr181-dhcpv6client
+  Device.DHCPv6.Client.{i}.X_PRPL-COM_Config.T2Renewed                                                 proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.X_PRPL-COM_Release                                                          proto::tr181-dhcpv6client
   Device.DHCPv6.Client.{i}.X_PRPL-COM_Release()                                                        proto::tr181-dhcpv6client
   Device.DHCPv6.ClientNumberOfEntries                                                                  proto::tr181-dhcpv6client
@@ -4190,9 +4252,11 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.DNS.X_PRPL-COM_RebindProtection.                                                              proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.DomainExceptions.{i}.                                         proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.DomainExceptions.{i}.Address                                  proto::tr181-dns
+  Device.DNS.X_PRPL-COM_RebindProtection.DomainExceptionsNumberOfEntries                               proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.Enable                                                        proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.IPExceptions.{i}.                                             proto::tr181-dns
   Device.DNS.X_PRPL-COM_RebindProtection.IPExceptions.{i}.Address                                      proto::tr181-dns
+  Device.DNS.X_PRPL-COM_RebindProtection.IPExceptionsNumberOfEntries                                   proto::tr181-dns
   Device.DSLite.                                                                                       proto::tr181-dslite
   Device.DSLite.Enable                                                                                 proto::tr181-dslite
   Device.DSLite.InterfaceSetting.{i}.                                                                  proto::tr181-dslite
@@ -4309,26 +4373,27 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.DeviceInfo.ProductClass                                                                       proto::deviceinfo-manager
   Device.DeviceInfo.ProvisioningCode                                                                   proto::deviceinfo-manager
   Device.DeviceInfo.Reboots.                                                                           proto::reboot-service
-  Device.DeviceInfo.Reboots.BootCounter                                                                proto::reboot-service
-  Device.DeviceInfo.Reboots.MaximumNumberOfReboots                                                     proto::reboot-service
-  Device.DeviceInfo.Reboots.NumberOfReboots                                                            proto::reboot-service
+  Device.DeviceInfo.Reboots.BootCount                                                                  proto::reboot-service
+  Device.DeviceInfo.Reboots.ColdBootCount                                                              proto::reboot-service
+  Device.DeviceInfo.Reboots.MaxRebootEntries                                                           proto::reboot-service
   Device.DeviceInfo.Reboots.Reboot.{i}.                                                                proto::reboot-service
-  Device.DeviceInfo.Reboots.Reboot.{i}.BootDate                                                        proto::reboot-service
-  Device.DeviceInfo.Reboots.Reboot.{i}.BootReason                                                      proto::reboot-service
-  Device.DeviceInfo.Reboots.WatchdogRebootCounter                                                      proto::reboot-service
-  Device.DeviceInfo.Reboots.flush()                                                                    proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.Alias                                                           proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.Cause                                                           proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.FirmwareUpdated                                                 proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.Reason                                                          proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.Remove()                                                        proto::reboot-service
+  Device.DeviceInfo.Reboots.Reboot.{i}.TimeStamp                                                       proto::reboot-service
+  Device.DeviceInfo.Reboots.RebootNumberOfEntries                                                      proto::reboot-service
+  Device.DeviceInfo.Reboots.RemoveAllReboots()                                                         proto::reboot-service
+  Device.DeviceInfo.Reboots.WarmBootCount                                                              proto::reboot-service
+  Device.DeviceInfo.Reboots.WatchdogBootCount                                                          proto::reboot-service
+  Device.DeviceInfo.Reboots.X_PRPL-COM_CurrentBootCycle                                                proto::reboot-service
+  Device.DeviceInfo.Reboots.X_PRPL-COM_Reasons.{i}.                                                    proto::reboot-service
+  Device.DeviceInfo.Reboots.X_PRPL-COM_Reasons.{i}.Alias                                               proto::reboot-service
+  Device.DeviceInfo.Reboots.X_PRPL-COM_Reasons.{i}.Format                                              proto::reboot-service
   Device.DeviceInfo.Reboots.reboot()                                                                   proto::reboot-service
-  Device.DeviceInfo.Reboots.reboot() input:Custom
-  Device.DeviceInfo.Reboots.reboot() input:Process
+  Device.DeviceInfo.Reboots.reboot() input:Cause
   Device.DeviceInfo.Reboots.reboot() input:Reason
-  Device.DeviceInfo.Reboots.reset()                                                                    proto::reboot-service
-  Device.DeviceInfo.Reboots.reset() input:Custom
-  Device.DeviceInfo.Reboots.reset() input:Process
-  Device.DeviceInfo.Reboots.reset() input:Reason
-  Device.DeviceInfo.Reboots.shutdown()                                                                 proto::reboot-service
-  Device.DeviceInfo.Reboots.shutdown() input:Custom
-  Device.DeviceInfo.Reboots.shutdown() input:Process
-  Device.DeviceInfo.Reboots.shutdown() input:Reason
   Device.DeviceInfo.SerialNumber                                                                       proto::deviceinfo-manager
   Device.DeviceInfo.SoftwareVersion                                                                    proto::deviceinfo-manager
   Device.DeviceInfo.UpTime                                                                             proto::deviceinfo-manager
@@ -4384,6 +4449,9 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.DynamicDNS.Client.{i}.Server                                                                  proto::tr181-dynamicdns
   Device.DynamicDNS.Client.{i}.Status                                                                  proto::tr181-dynamicdns
   Device.DynamicDNS.Client.{i}.Username                                                                proto::tr181-dynamicdns
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_DNSServer                                                    proto::tr181-dynamicdns
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_IP                                                           proto::tr181-dynamicdns
+  Device.DynamicDNS.Client.{i}.X_PRPL-COM_IPVersion                                                    proto::tr181-dynamicdns
   Device.DynamicDNS.ClientNumberOfEntries                                                              proto::tr181-dynamicdns
   Device.DynamicDNS.Server.{i}.                                                                        proto::tr181-dynamicdns
   Device.DynamicDNS.Server.{i}.Alias                                                                   proto::tr181-dynamicdns
@@ -4720,7 +4788,6 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.Hosts.Host.{i}.                                                                               proto::hosts-manager
   Device.Hosts.Host.{i}.Active                                                                         proto::hosts-manager
   Device.Hosts.Host.{i}.ActiveLastChange                                                               proto::hosts-manager
-  Device.Hosts.Host.{i}.Alias                                                                          proto::hosts-manager
   Device.Hosts.Host.{i}.AssociatedDevice                                                               proto::hosts-manager
   Device.Hosts.Host.{i}.DHCPClient                                                                     proto::hosts-manager
   Device.Hosts.Host.{i}.HostName                                                                       proto::hosts-manager
@@ -4736,10 +4803,10 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.Hosts.Host.{i}.Layer3Interface                                                                proto::hosts-manager
   Device.Hosts.Host.{i}.PhysAddress                                                                    proto::hosts-manager
   Device.Hosts.Host.{i}.WANStats.                                                                      proto::hosts-manager
-  Device.Hosts.Host.{i}.WANStats.RxBytes                                                               proto::hosts-manager
-  Device.Hosts.Host.{i}.WANStats.RxPackets                                                             proto::hosts-manager
-  Device.Hosts.Host.{i}.WANStats.TxBytes                                                               proto::hosts-manager
-  Device.Hosts.Host.{i}.WANStats.TxPackets                                                             proto::hosts-manager
+  Device.Hosts.Host.{i}.WANStats.BytesReceived                                                         proto::hosts-manager
+  Device.Hosts.Host.{i}.WANStats.BytesSent                                                             proto::hosts-manager
+  Device.Hosts.Host.{i}.WANStats.PacketsReceived                                                       proto::hosts-manager
+  Device.Hosts.Host.{i}.WANStats.PacketsSent                                                           proto::hosts-manager
   Device.Hosts.Host.{i}.X_PRPL-COM_Protected                                                           proto::hosts-manager
   Device.Hosts.HostNumberOfEntries                                                                     proto::hosts-manager
   Device.Hosts.X_PRPL-COM_HostConfig.                                                                  proto::hosts-manager
@@ -5108,6 +5175,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.IP.Interface.{i}.X_PRPL-COM_IPv4Config.NeighborReachableTime                                  proto::ip-manager
   Device.IP.Interface.{i}.X_PRPL-COM_IPv6Config.                                                       proto::ip-manager
   Device.IP.Interface.{i}.X_PRPL-COM_IPv6Config.NeighborReachableTime                                  proto::ip-manager
+  Device.IP.Interface.{i}.X_PRPL-COM_MTUMode                                                           proto::ip-manager
   Device.IP.InterfaceNumberOfEntries                                                                   proto::ip-manager
   Device.IP.ULAPrefix                                                                                  proto::ip-manager
   Device.InterfaceStack.{i}.                                                                           proto::tr181-device
@@ -6066,8 +6134,10 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:HostObject
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:ModuleVersion
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:NetworkConfig
+  Device.SoftwareModules.DeploymentUnit.{i}.Update() input:NumRequiredUIDs
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:OptionalRoles
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:Password
+  Device.SoftwareModules.DeploymentUnit.{i}.Update() input:Privileged
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:RequiredRoles
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:RetainData
   Device.SoftwareModules.DeploymentUnit.{i}.Update() input:URL
@@ -6117,11 +6187,16 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.SoftwareModules.ExecutionUnit.{i}.Alias                                                       proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedCPUPercent                                         proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedDiskSpace                                          proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedEUGID                                              proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedEUUID                                              proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedHostGID                                            proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.AllocatedHostUID                                            proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AllocatedMemory                                             proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AssociatedProcessList                                       proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AutoStart                                                   proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AvailableDiskSpace                                          proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.AvailableMemory                                             proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.CreationTime                                                proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.Description                                                 proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.DiskSpaceInUse                                              proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.EUID                                                        proto::timingila
@@ -6157,6 +6232,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState()                                         proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.SetRequestedState() input:RequestedState
   Device.SoftwareModules.ExecutionUnit.{i}.Status                                                      proto::timingila
+  Device.SoftwareModules.ExecutionUnit.{i}.Uptime                                                      proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.Vendor                                                      proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.VendorConfigList                                            proto::timingila
   Device.SoftwareModules.ExecutionUnit.{i}.VendorLogList                                               proto::timingila
@@ -6173,8 +6249,10 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.SoftwareModules.InstallDU() input:HostObject
   Device.SoftwareModules.InstallDU() input:ModuleVersion
   Device.SoftwareModules.InstallDU() input:NetworkConfig
+  Device.SoftwareModules.InstallDU() input:NumRequiredUIDs
   Device.SoftwareModules.InstallDU() input:OptionalRoles
   Device.SoftwareModules.InstallDU() input:Password
+  Device.SoftwareModules.InstallDU() input:Privileged
   Device.SoftwareModules.InstallDU() input:RequiredRoles
   Device.SoftwareModules.InstallDU() input:Signature
   Device.SoftwareModules.InstallDU() input:URL
@@ -6230,6 +6308,7 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_CACertificate                                            proto::tr181-syslog
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_Certificate                                              proto::tr181-syslog
   Device.Syslog.Source.{i}.Network.X_PRPL-COM_PeerVerify                                               proto::tr181-syslog
+  Device.Syslog.Source.{i}.Network.X_PRPL-COM_StructuredData                                           proto::tr181-syslog
   Device.Syslog.Source.{i}.Severity                                                                    proto::tr181-syslog
   Device.Syslog.Source.{i}.SystemMessages                                                              proto::tr181-syslog
   Device.Syslog.SourceNumberOfEntries                                                                  proto::tr181-syslog
@@ -6299,11 +6378,26 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.Time.update_status()                                                                          proto::time-manager
   Device.UPnP.                                                                                         proto::tr181-upnp
   Device.UPnP.Device.                                                                                  proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.                                                                     proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPArchitecture                                                     proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPArchitectureMinorVer                                             proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPBasicDevice                                                      proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPDMBasicMgmt                                                      proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPDMConfigurationMgmt                                              proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPDMSoftwareMgmt                                                   proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPIGD                                                              proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPMediaRenderer                                                    proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPMediaServer                                                      proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPQoSDevice                                                        proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPQoSPolicyHolder                                                  proto::tr181-upnp
+  Device.UPnP.Device.Capabilities.UPnPWLANAccessPoint                                                  proto::tr181-upnp
   Device.UPnP.Device.Enable                                                                            proto::tr181-upnp
   Device.UPnP.Device.UPnPIGD                                                                           proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.                                                                    proto::tr181-upnp
+  Device.UPnP.X_PRPL-COM_IGDConfig.AllowReservedAddr                                                   proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.AutoCleanupEnable                                                   proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.CleanupInterval                                                     proto::tr181-upnp
+  Device.UPnP.X_PRPL-COM_IGDConfig.EnableIPv6                                                          proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.MaxLifetime                                                         proto::tr181-upnp
   Device.UPnP.X_PRPL-COM_IGDConfig.UPnPInterface                                                       proto::tr181-upnp
   Device.USPServices.
@@ -6320,6 +6414,8 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.UnixDomainSockets.UnixDomainSocket.{i}.Path
   Device.UnixDomainSockets.UnixDomainSocketNumberOfEntries
   Device.UserInterface.                                                                                proto::tr181-httpaccess
+  Device.UserInterface.AvailableLanguages                                                              proto::tr181-httpaccess
+  Device.UserInterface.CurrentLanguage                                                                 proto::tr181-httpaccess
   Device.UserInterface.HTTPAccess.{i}.                                                                 proto::tr181-httpaccess
   Device.UserInterface.HTTPAccess.{i}.AccessType                                                       proto::tr181-httpaccess
   Device.UserInterface.HTTPAccess.{i}.Alias                                                            proto::tr181-httpaccess

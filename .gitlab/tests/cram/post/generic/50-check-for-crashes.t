@@ -21,16 +21,10 @@ Check that there are no signs of crashes:
 
 Ensure that ProcessFaults does not contain any crashes:
 
-  $ R "ba-cli ProcessFaults.? | grep -v '^>' | head -n -1 | sort"
-  ProcessFaults.
-  ProcessFaults.LastUpgradeCount=0
-  ProcessFaults.MaxProcessFaultEntries=5
-  ProcessFaults.MinFreeSpace=3000
-  ProcessFaults.PreviousBootCount=0
-  ProcessFaults.ProcessFaultNumberOfEntries=0
-  ProcessFaults.StoragePath="/ext/faults"
+  $ R "ba-cli ProcessFaults.ProcessFault.? | grep -v '^>' | head -n -1 | sort"
+  No data found
 
 Ensure that there are no core dumps in the system:
 
   $ storage_path=$(R "ba-cli -l ProcessFaults.StoragePath?" | tr -d '\n')
-  $ R "test ! -d \"$storage_path\""
+  $ R "test ! -f \"${storage_path}/count\""

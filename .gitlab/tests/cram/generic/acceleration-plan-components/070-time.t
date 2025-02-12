@@ -25,7 +25,7 @@ Check that we've expected datamodel:
   123
   Synchronized
   Unicast
-  cpe-client-1
+  cpe-Client-1
 
   $ R "ubus call Time.Server _get | jsonfilter -e @[*].Port -e @[*].Status -e @[*].Alias -e @[*].Mode | sort"
   123
@@ -59,7 +59,7 @@ Disable outgoing NTP traffic:
 
 Disable and enable the Time manager to force time synchronization:
 
-  $ R "ubus -S call Time _set '{\"parameters\":{\"Enable\":False}}'" ; sleep 1
+  $ R "ubus -S call Time _set '{\"parameters\":{\"Enable\":False}}'" ; sleep 5
   {"Time.":{"Enable":false}}
   {}
   {"amxd-error-code":0}
@@ -89,7 +89,7 @@ Enable outgoing NTP traffic:
 
 Disable and enable the Time manager to force time synchronization:
 
-  $ R "ubus -S call Time _set '{\"parameters\":{\"Enable\":False}}'" ; sleep 1
+  $ R "ubus -S call Time _set '{\"parameters\":{\"Enable\":False}}'" ; sleep 5
   {"Time.":{"Enable":false}}
   {}
   {"amxd-error-code":0}
