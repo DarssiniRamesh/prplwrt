@@ -20,7 +20,7 @@ Check that random LXC binaries work:
 Check Cthulhu.Config datamodel:
 
   $ R "ubus -S call Cthulhu.Config _get"
-  {"Cthulhu.Config.":{"PluginLocation":"/usr/lib/amx/cthulhu/plugins","ImageLocation":"/lcm/rlyeh/images","UseOverlayFS":true,"GracefulShutdownTimeoutSeconds":0,"UseBundles":false,"StorageLocation":"/lcm/cthulhu","DefaultBackend":"/usr/lib/cthulhu-lxc/cthulhu-lxc.so","BundleLocation":"/lcm/celephais/bundles","BlobLocation":"/lcm/rlyeh/blobs"}}
+  {"Cthulhu.Config.":{"PluginLocation":"/usr/lib/amx/cthulhu/plugins","ImageLocation":"/lcm/rlyeh/images","HostObjectsMountOptions":"bind,ro,nodev,nosuid,relatime,noexec","UseOverlayFS":true,"GracefulShutdownTimeoutSeconds":0,"UseBundles":false,"UnprivCapabilities":"CAP_SYS_ADMIN","StorageLocation":"/lcm/cthulhu","HostObjectsMountOptionsTmpfs":"rw,nodev,nosuid,relatime","DefaultBackend":"/usr/lib/cthulhu-lxc/cthulhu-lxc.so","BundleLocation":"/lcm/celephais/bundles","BlobLocation":"/lcm/rlyeh/blobs"}}
   {}
   {"amxd-error-code":0}
 
@@ -69,7 +69,7 @@ Check that Rlyeh has downloaded the testing container:
 
   $ R "ubus -S call Rlyeh.Images _get | jsonfilter -e @[*].Name -e @[*].Status | sort"
   Downloaded
-  prplos/prplos/prplos-testing-container-intel_mips-xrx500
+  prpl-foundation/prplos/prplos/prplos-testing-container-intel_mips-xrx500
 
 Remove testing container:
 

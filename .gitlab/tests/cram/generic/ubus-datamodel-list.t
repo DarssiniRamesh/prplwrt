@@ -15,6 +15,7 @@ Check that ubus has expected datamodels available:
   CaptivePortal.LANInterface
   Cthulhu
   Cthulhu.Config
+  Cthulhu.Config.Debug
   Cthulhu.Container
   Cthulhu.Container.Instances
   Cthulhu.Information
@@ -162,7 +163,6 @@ Check that ubus has expected datamodels available:
   IPDiagnostics.X_PRPL-COM_DownloadConfig
   IPDiagnostics.X_PRPL-COM_DownloadResult
   IPDiagnostics.X_PRPL-COM_DownloadResult.Config
-  IPDiagnostics.X_PRPL-COM_DownloadResult.IncrementalResult
   IPDiagnostics.X_PRPL-COM_DownloadResult.Process
   IPDiagnostics.X_PRPL-COM_UploadConfig
   IPDiagnostics.X_PRPL-COM_UploadResult
@@ -244,6 +244,7 @@ Check that ubus has expected datamodels available:
   QoS.Shaper
   Reboot
   Reboot.Reboot
+  Reboot.X_PRPL-COM_Reasons
   Rlyeh
   Rlyeh.Images
   RouterAdvertisement
@@ -277,6 +278,7 @@ Check that ubus has expected datamodels available:
   Timingila
   UPnP
   UPnP.Device
+  UPnP.Device.Capabilities
   UPnP.X_PRPL-COM_IGDConfig
   Unbound
   UserInterface
