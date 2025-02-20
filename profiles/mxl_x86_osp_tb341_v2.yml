@@ -37,7 +37,7 @@ feeds:
   - name: misc
     uri: ssh://git@git.maxlinear.com/ugw-oss/feeds/feed_common.git
     tracking_branch: updk_9.1.80
-    revision: f8acfae5284be1a278c9cff40c5d7f62570b208f
+    revision: 9bf4d29dca9e0dc70a891db2967f681377edb7b1
   - name: opensource_apps_prpl
     uri: ssh://git@git.maxlinear.com/ugw-oss/feeds/feed_opensource_apps_prpl.git
     tracking_branch: updk_9.1.80
