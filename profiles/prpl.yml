@@ -15,7 +15,7 @@ feeds:
 
   - name: feed_prplos
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed-prplos.git
-    revision: main@e266ae403054ff6c9921c9719333c53ff12dc6bb
+    revision: main@1729caa5cab97e5d767282907c206684260e5eb3
 
 additional_packages:
   - feed: packages
@@ -120,9 +120,11 @@ packages:
   - mod-sahtrace
   - mod-vlan-ioctl
   - mod-xpon-prpl
+  - mod-cellular-libmm
   - multisettings
   - netdev-plugin
   - netmodel
+  - netmodel-cellular
   - netmodel-bridge
   - netmodel-clients
   - netmodel-dhcpv4
@@ -190,6 +192,7 @@ packages:
   - tr181-xpon
   - wan-manager
   - wifi-sensing
+  - cellular-manager
 
 diffconfig: |
           CONFIG_DEVEL=y
