@@ -582,6 +582,17 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.DeviceInfo.ModelName                                                                          proto::deviceinfo-manager
   Device.DeviceInfo.ModelNumber                                                                        proto::deviceinfo-manager
   Device.DeviceInfo.PEN                                                                                proto::deviceinfo-manager
+  Device.DeviceInfo.PowerStatus.                                                                       proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.                                                       proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Alias                                                  proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Current                                                proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Enable                                                 proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.LastUpdate                                             proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Name                                                   proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Power                                                  proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Status                                                 proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Voltage                                                proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensorNumberOfEntries                                             proto::tr181-powerstatus
   Device.DeviceInfo.ProcessFaults.                                                                     proto::amx-faultmonitor
   Device.DeviceInfo.ProcessFaults.LastUpgradeCount                                                     proto::amx-faultmonitor
   Device.DeviceInfo.ProcessFaults.MaxProcessFaultEntries                                               proto::amx-faultmonitor
@@ -742,8 +753,12 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.Ethernet.Interface.{i}.CurrentBitRate                                                         proto::ethernet-manager
   Device.Ethernet.Interface.{i}.CurrentDuplexMode                                                      proto::ethernet-manager
   Device.Ethernet.Interface.{i}.DuplexMode                                                             proto::ethernet-manager
+  Device.Ethernet.Interface.{i}.EDPDCapability                                                         proto::ethernet-manager
+  Device.Ethernet.Interface.{i}.EDPDEnable                                                             proto::ethernet-manager
+  Device.Ethernet.Interface.{i}.EDPDStatus                                                             proto::ethernet-manager
   Device.Ethernet.Interface.{i}.EEECapability                                                          proto::ethernet-manager
   Device.Ethernet.Interface.{i}.EEEEnable                                                              proto::ethernet-manager
+  Device.Ethernet.Interface.{i}.EEEStatus                                                              proto::ethernet-manager
   Device.Ethernet.Interface.{i}.Enable                                                                 proto::ethernet-manager
   Device.Ethernet.Interface.{i}.LastChange                                                             proto::ethernet-manager
   Device.Ethernet.Interface.{i}.LowerLayers                                                            proto::ethernet-manager
@@ -1481,21 +1496,22 @@ Check that obuspa has expected datamodel available (minus the platform specific 
   Device.LEDs.LED.{i}.CurrentCycleElement.CycleElementReference                                        proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.                                                                proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Alias                                                           proto::tr181-led
+  Device.LEDs.LED.{i}.CycleElement.{i}.Brightness                                                      proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Color                                                           proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Duration                                                        proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Enable                                                          proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.FadeInterval                                                    proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Order                                                           proto::tr181-led
-  Device.LEDs.LED.{i}.CycleElement.{i}.X_PRPL-COM_Brightness                                           proto::tr181-led
   Device.LEDs.LED.{i}.CycleElementNumberOfEntries                                                      proto::tr181-led
   Device.LEDs.LED.{i}.CyclePeriodRepetitions                                                           proto::tr181-led
+  Device.LEDs.LED.{i}.Enable                                                                           proto::tr181-led
   Device.LEDs.LED.{i}.Location                                                                         proto::tr181-led
+  Device.LEDs.LED.{i}.MaxBrightness                                                                    proto::tr181-led
   Device.LEDs.LED.{i}.Name                                                                             proto::tr181-led
   Device.LEDs.LED.{i}.Reason                                                                           proto::tr181-led
   Device.LEDs.LED.{i}.RelativeXPosition                                                                proto::tr181-led
   Device.LEDs.LED.{i}.RelativeYPosition                                                                proto::tr181-led
   Device.LEDs.LED.{i}.Status                                                                           proto::tr181-led
-  Device.LEDs.LED.{i}.X_PRPL-COM_MaxBrightness                                                         proto::tr181-led
   Device.LEDs.LEDNumberOfEntries                                                                       proto::tr181-led
   Device.LocalAgent.
   Device.LocalAgent.Certificate.{i}.
@@ -4586,6 +4602,17 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.DeviceInfo.ModelName                                                                          proto::deviceinfo-manager
   Device.DeviceInfo.ModelNumber                                                                        proto::deviceinfo-manager
   Device.DeviceInfo.PEN                                                                                proto::deviceinfo-manager
+  Device.DeviceInfo.PowerStatus.                                                                       proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.                                                       proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Alias                                                  proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Current                                                proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Enable                                                 proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.LastUpdate                                             proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Name                                                   proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Power                                                  proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Status                                                 proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensor.{i}.Voltage                                                proto::tr181-powerstatus
+  Device.DeviceInfo.PowerStatus.PowerSensorNumberOfEntries                                             proto::tr181-powerstatus
   Device.DeviceInfo.ProcessFaults.                                                                     proto::amx-faultmonitor
   Device.DeviceInfo.ProcessFaults.LastUpgradeCount                                                     proto::amx-faultmonitor
   Device.DeviceInfo.ProcessFaults.MaxProcessFaultEntries                                               proto::amx-faultmonitor
@@ -4746,8 +4773,12 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.Ethernet.Interface.{i}.CurrentBitRate                                                         proto::ethernet-manager
   Device.Ethernet.Interface.{i}.CurrentDuplexMode                                                      proto::ethernet-manager
   Device.Ethernet.Interface.{i}.DuplexMode                                                             proto::ethernet-manager
+  Device.Ethernet.Interface.{i}.EDPDCapability                                                         proto::ethernet-manager
+  Device.Ethernet.Interface.{i}.EDPDEnable                                                             proto::ethernet-manager
+  Device.Ethernet.Interface.{i}.EDPDStatus                                                             proto::ethernet-manager
   Device.Ethernet.Interface.{i}.EEECapability                                                          proto::ethernet-manager
   Device.Ethernet.Interface.{i}.EEEEnable                                                              proto::ethernet-manager
+  Device.Ethernet.Interface.{i}.EEEStatus                                                              proto::ethernet-manager
   Device.Ethernet.Interface.{i}.Enable                                                                 proto::ethernet-manager
   Device.Ethernet.Interface.{i}.LastChange                                                             proto::ethernet-manager
   Device.Ethernet.Interface.{i}.LowerLayers                                                            proto::ethernet-manager
@@ -5485,21 +5516,22 @@ Check that obuspa provides the same datamodel again (minus the platform specific
   Device.LEDs.LED.{i}.CurrentCycleElement.CycleElementReference                                        proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.                                                                proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Alias                                                           proto::tr181-led
+  Device.LEDs.LED.{i}.CycleElement.{i}.Brightness                                                      proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Color                                                           proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Duration                                                        proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Enable                                                          proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.FadeInterval                                                    proto::tr181-led
   Device.LEDs.LED.{i}.CycleElement.{i}.Order                                                           proto::tr181-led
-  Device.LEDs.LED.{i}.CycleElement.{i}.X_PRPL-COM_Brightness                                           proto::tr181-led
   Device.LEDs.LED.{i}.CycleElementNumberOfEntries                                                      proto::tr181-led
   Device.LEDs.LED.{i}.CyclePeriodRepetitions                                                           proto::tr181-led
+  Device.LEDs.LED.{i}.Enable                                                                           proto::tr181-led
   Device.LEDs.LED.{i}.Location                                                                         proto::tr181-led
+  Device.LEDs.LED.{i}.MaxBrightness                                                                    proto::tr181-led
   Device.LEDs.LED.{i}.Name                                                                             proto::tr181-led
   Device.LEDs.LED.{i}.Reason                                                                           proto::tr181-led
   Device.LEDs.LED.{i}.RelativeXPosition                                                                proto::tr181-led
   Device.LEDs.LED.{i}.RelativeYPosition                                                                proto::tr181-led
   Device.LEDs.LED.{i}.Status                                                                           proto::tr181-led
-  Device.LEDs.LED.{i}.X_PRPL-COM_MaxBrightness                                                         proto::tr181-led
   Device.LEDs.LEDNumberOfEntries                                                                       proto::tr181-led
   Device.LocalAgent.
   Device.LocalAgent.Certificate.{i}.
