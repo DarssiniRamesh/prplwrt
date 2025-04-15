@@ -139,7 +139,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_hostapd-qca-openssl=y
   CONFIG_PACKAGE_hostapd-qca-utils=y
   CONFIG_PACKAGE_hosts-manager=y
-  CONFIG_PACKAGE_io-expander-freedom=y
   CONFIG_PACKAGE_ip-bridge=y
   CONFIG_PACKAGE_ip-full=y
   CONFIG_PACKAGE_ip-manager=y
@@ -177,6 +176,8 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_kmod-ipt-raw=y
   CONFIG_PACKAGE_kmod-ipt-raw6=y
   CONFIG_PACKAGE_kmod-iptunnel6=y
+  CONFIG_PACKAGE_kmod-leds-lp5562=y
+  CONFIG_PACKAGE_kmod-leds-lp55xx-common=y
   CONFIG_PACKAGE_kmod-lib-crc-ccitt=y
   CONFIG_PACKAGE_kmod-lib-textsearch=y
   CONFIG_PACKAGE_kmod-loop=y
