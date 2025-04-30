@@ -16,6 +16,8 @@ Assure expected build configuration (PCF-1413):
   CONFIG_TOOLCHAINOPTS=y
   CONFIG_BUSYBOX_CUSTOM=y
   CONFIG_TARGET_PER_DEVICE_ROOTFS=y
+  CONFIG_AMX_TR181_USB=y
+  CONFIG_AMX_TR181_USB_ORDER=81
   CONFIG_BIND_ENABLE_DOH=y
   CONFIG_BUILD_LOG=y
   CONFIG_BUILD_SDK="prplos"
@@ -225,7 +227,8 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_ebtables-legacy-utils=y
   CONFIG_PACKAGE_eip197-firmware=y
   CONFIG_PACKAGE_ethernet-manager=y
-  CONFIG_PACKAGE_ethtool=y
+  CONFIG_PACKAGE_ethtool=m
+  CONFIG_PACKAGE_ethtool-full=y
   CONFIG_PACKAGE_f2fsck=y
   CONFIG_PACKAGE_fcgi=y
   CONFIG_PACKAGE_firewall4=m
@@ -259,7 +262,6 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_iwlwav-hostap-ng-uci=y
   CONFIG_PACKAGE_iwlwav-iw=y
   CONFIG_PACKAGE_iwlwav-tools-osp=y
-  CONFIG_PACKAGE_jansson=m
   CONFIG_PACKAGE_keyutils=y
   CONFIG_PACKAGE_kmod-asn1-decoder=y
   CONFIG_PACKAGE_kmod-crypto-acompress=y
@@ -410,6 +412,7 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_libattr=y
   CONFIG_PACKAGE_libblkid=y
   CONFIG_PACKAGE_libbpf=y
+  CONFIG_PACKAGE_libbsd=y
   CONFIG_PACKAGE_libbz2=y
   CONFIG_PACKAGE_libcap=y
   CONFIG_PACKAGE_libcap-ng=y
@@ -490,6 +493,7 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_libstdcpp=y
   CONFIG_PACKAGE_libswla=y
   CONFIG_PACKAGE_libswlc=y
+  CONFIG_PACKAGE_libsysfs=y
   CONFIG_PACKAGE_libtr181-schedules=y
   CONFIG_PACKAGE_libtr69-engine=y
   CONFIG_PACKAGE_libudev-zero=y
@@ -736,9 +740,11 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_tr181-rest-api=y
   CONFIG_PACKAGE_tr181-routeradvertisement=y
   CONFIG_PACKAGE_tr181-security=y
+  CONFIG_PACKAGE_tr181-sfp=y
   CONFIG_PACKAGE_tr181-syslog=y
   CONFIG_PACKAGE_tr181-temperature=y
   CONFIG_PACKAGE_tr181-upnp=y
+  CONFIG_PACKAGE_tr181-usb=y
   CONFIG_PACKAGE_tr181-usermanagement=y
   CONFIG_PACKAGE_tr181-xpon=y
   CONFIG_PACKAGE_uboot-envtools=y
@@ -909,6 +915,8 @@ Assure expected build configuration (PCF-1413):
   CONFIG_SAH_AMX_TR181_ROUTING_RUN_AS_USER="tr181_app"
   CONFIG_SAH_AMX_TR181_SECURITY=y
   CONFIG_SAH_AMX_TR181_SECURITY_ORDER=61
+  CONFIG_SAH_AMX_TR181_SFP=y
+  CONFIG_SAH_AMX_TR181_SFP_ORDER=30
   CONFIG_SAH_AMX_TR181_TEMPERATURE=y
   CONFIG_SAH_AMX_TR181_TEMPERATURE_ORDER=15
   CONFIG_SAH_AMX_TR181_TEMPERATURE_RUN_AS_GROUP="tr181_app"
