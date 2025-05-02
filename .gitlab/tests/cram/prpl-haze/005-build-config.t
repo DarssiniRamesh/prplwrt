@@ -151,7 +151,11 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_kmod-ebtables=y
   CONFIG_PACKAGE_kmod-ebtables-ipv4=y
   CONFIG_PACKAGE_kmod-ebtables-ipv6=y
+  # CONFIG_PACKAGE_kmod-gpio-button-hotplug is not set
   CONFIG_PACKAGE_kmod-ifb=y
+  CONFIG_PACKAGE_kmod-input-core=y
+  CONFIG_PACKAGE_kmod-input-evdev=y
+  CONFIG_PACKAGE_kmod-input-gpio-keys=y
   CONFIG_PACKAGE_kmod-ip6-tunnel=y
   CONFIG_PACKAGE_kmod-ip6tables=y
   CONFIG_PACKAGE_kmod-ip6tables-extra=y
@@ -566,7 +570,8 @@ Assure expected build configuration (PCF-1413):
   CONFIG_SAH_AMX_TR181_BULKDATA_START_ORDER=90
   CONFIG_SAH_AMX_TR181_BULKDATA_STOP_ORDER=88
   CONFIG_SAH_AMX_TR181_BUTTON=y
-  CONFIG_SAH_AMX_TR181_BUTTON_ORDER=42
+  CONFIG_SAH_AMX_TR181_BUTTON_RUN_AS_GROUP="tr181_app"
+  CONFIG_SAH_AMX_TR181_BUTTON_RUN_AS_USER="tr181_app"
   CONFIG_SAH_AMX_TR181_CAPTIVEPORTAL=y
   CONFIG_SAH_AMX_TR181_CAPTIVEPORTAL_EXAMPLE=y
   CONFIG_SAH_AMX_TR181_DEVICE=y
