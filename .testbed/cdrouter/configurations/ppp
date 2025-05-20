@@ -2397,7 +2397,7 @@ SECTION "CDRouter TR-069 Add-On" {
         # testvar tr69DeviceType                   IGD
         # testvar tr69DeviceOui                    e09153
         # testvar tr69DeviceSn                     2673964
-        # testvar tr69InformTimeout                120
+        # testvar tr69InformTimeout                150
         # testvar tr69MinPeriodicInform            60
         # testvar tr69ScheduleInformRPC            yes
         # testvar tr69UploadRPC                    no
