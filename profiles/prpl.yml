@@ -15,20 +15,15 @@ feeds:
 
   - name: feed_prplos
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed-prplos.git
-    revision: feat-54_stable-4.0@045d7aab98b5abd00cf1843f168f81d0daec4e07
+    revision: feat-54_stable-4.0@faba3e49e5e0491d314426b42ae905bfbb99bae1
 
 additional_packages:
   - feed: packages
     packages:
       - libnl-core
       - libnl-route
-      - lighttpd
-      - lighttpd-mod-auth
-      - lighttpd-mod-authn_file
-      - lighttpd-mod-fastcgi
       - opensc
       - libp11
-      - lighttpd-mod-openssl
       - pciids
       - pciutils
       - picocom
@@ -67,6 +62,11 @@ packages:
   - libfwinterface
   - libfwrules
   - libnetmodel
+  - lighttpd
+  - lighttpd-mod-auth
+  - lighttpd-mod-authn_file
+  - lighttpd-mod-fastcgi
+  - lighttpd-mod-openssl
   - lua-amx
   - lxc
   - lxc-attach
