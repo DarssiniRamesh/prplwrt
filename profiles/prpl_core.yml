@@ -11,7 +11,7 @@ feeds:
 
   - name: feed_prplos
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed-prplos.git
-    revision: main@99f718e85afc5a65be1f6d28454c64e335b7b06a
+    revision: main@0cf9e19ed5b85d8089b8ec4a44e6d2c765515c78
 
 additional_packages:
   - feed: packages
@@ -81,6 +81,7 @@ packages:
   - ssh-server
   - tc-tiny
   - time-manager
+  - tr140-storageservice
   - tr181-bridging
   - tr181-button
   - tr181-device
