@@ -10,7 +10,7 @@ from subprocess import run
 from os import getenv
 
 sys.stdout = io.TextIOWrapper(open(sys.stdout.fileno(), "wb", 0), write_through=True)
-profile_folder = Path(getenv("PROFILES", "./profiles"))
+profile_folders = getenv("GENCONFIG_PROFILE_DIRS", "./profiles")
 
 
 def run_cmd(cmd: list):
@@ -42,37 +42,41 @@ def usage(code: int = 0):
 
 
 def load_yaml(fname: str, profile: dict):
-    profile_file = (profile_folder / fname).with_suffix(".yml")
+    # Allow profile overriding by searching in reverse order
+    for folder in profile_folders.split(':')[::-1]:
+        profile_file = (Path(folder) / fname).with_suffix(".yml")
+
+        if not profile_file.is_file():
+            continue
+
+        new = yaml.safe_load(profile_file.read_text())
+        for n in new:
+            if n in {"target", "subtarget", "external_target"}:
+                if profile.get(n):
+                    die(f"Duplicate tag found {n}")
+                profile.update({n: new.get(n)})
+            elif n in {"description"}:
+                profile["description"].append(new.get(n))
+            elif n in {"packages"}:
+                profile["packages"].extend(new.get(n))
+            elif n in {"profiles"}:
+                profile["profiles"].extend(new.get(n))
+            elif n in {"diffconfig"}:
+                profile["diffconfig"] += new.get(n)
+            elif n in {"feeds"}:
+                for f in new.get(n):
+                    if f.get("name", "") == "" or f.get("uri", "") == "":
+                        die(f"Found bad feed {f}")
+                    profile["feeds"][f.get("name")] = f
+            elif n in {"additional_packages"}:
+                for f in new.get(n):
+                    if not f.get("feed") or not f.get("packages"):
+                        die(f"Found bad additional_packages {f}")
+                profile["additional_packages"].extend(new.get(n))
+        return profile
 
     if not profile_file.is_file():
         die(f"Profile {fname} not found")
-
-    new = yaml.safe_load(profile_file.read_text())
-    for n in new:
-        if n in {"target", "subtarget", "external_target"}:
-            if profile.get(n):
-                die(f"Duplicate tag found {n}")
-            profile.update({n: new.get(n)})
-        elif n in {"description"}:
-            profile["description"].append(new.get(n))
-        elif n in {"packages"}:
-            profile["packages"].extend(new.get(n))
-        elif n in {"profiles"}:
-            profile["profiles"].extend(new.get(n))
-        elif n in {"diffconfig"}:
-            profile["diffconfig"] += new.get(n)
-        elif n in {"feeds"}:
-            for f in new.get(n):
-                if f.get("name", "") == "" or f.get("uri", "") == "":
-                    die(f"Found bad feed {f}")
-                profile["feeds"][f.get("name")] = f
-        elif n in {"additional_packages"}:
-            for f in new.get(n):
-                if not f.get("feed") or not f.get("packages"):
-                    die(f"Found bad additional_packages {f}")
-            profile["additional_packages"].extend(new.get(n))
-
-    return profile
 
 
 def extract_sha1_from_revision(revision: str) -> str:
@@ -100,28 +104,31 @@ def extract_sha1_from_revision(revision: str) -> str:
 
 
 def handle_feed_revision(profile_feed: dict, feeds: list):
-    revision = profile_feed.get("revision")
-    if not revision:
-        die(f"Please specify `revision` for the following feed: {profile_feed}")
+    method = profile_feed.get("method", "src-git")
+    f = f'{method},{profile_feed["name"]},{profile_feed["uri"]}'
 
-    sha1 = extract_sha1_from_revision(revision)
-    if not sha1:
-        die(
-            f"Invalid feed revision {revision} in {profile_feed} feed, valid `revision` is:",
-            " 1. A full 40-character Git SHA-1 hash.",
-            " 2. A human readable reference like Git tag followed by '@' and a full 40-character Git SHA-1 hash.",
-        )
+    if method.startswith('src-git'):
+        revision = profile_feed.get("revision")
+        if not revision:
+            die(f"Please specify `revision` for the following feed: {profile_feed}")
 
-    f = profile_feed
-    feeds.append(
-        f'{f.get("method", "src-git")},{f["name"]},{f["uri"]}^{sha1}'
-    )
+        sha1 = extract_sha1_from_revision(revision)
+        if not sha1:
+            die(
+                f"Invalid feed revision {revision} in {profile_feed} feed, valid `revision` is:",
+                " 1. A full 40-character Git SHA-1 hash.",
+                " 2. A human readable reference like Git tag followed by '@' and a full 40-character Git SHA-1 hash.",
+            )
+        f += f'^{sha1}'
+
+    feeds.append(f)
 
 
 if "list" in sys.argv:
-    print(f"Profiles in {profile_folder}")
+    for folder in profile_folders.split(':')[::-1]:
+        print(f"Profiles in {folder}")
 
-    print("\n".join(map(lambda p: str(p.stem), profile_folder.glob("*.yml"))))
+        print("\n".join(map(lambda p: str(p.stem), Path(folder).glob("*.yml"))))
     quit(0)
 
 if "help" in sys.argv:

@@ -3,19 +3,19 @@ description: Add the prpl features
 feeds:
   - name: feed_amx
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_amx.git
-    revision: prplos-v4.0.0@4b1ec39befe3441b4742859839cefafef40b4045
+    revision: prplware-v4.0.1@0fd0fe2366f43505eada12290a38527ea1886829
 
   - name: feed_lcm
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_lcm.git
-    revision: prplos-v4.0.0@5e0cc02f4c97cf232cd7e0a30483e5f187159491
+    revision: prplware-v4.0.1@459c111cb68375f7456dc347e42ad6173a111da7
   
   - name: feed_prplmesh
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed-prplmesh.git
-    revision: prplos-v4.0.0@0c09fe7e3195a8ed4b1c41cc9effaf9fc3747f81
+    revision: prplware-v4.0.1@bc6e0b8fc9c6d37f5da754a480b02c9557515fd3
 
   - name: feed_prplos
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed-prplos.git
-    revision: prplos-v4.0.0@057137d5048bdcd6fefaf6d7df70f18a33eb7e97
+    revision: prplware-v4.0.1@bb539da0bcb79d2b5e1635d227303aaf5a6248c1
 
 additional_packages:
   - feed: packages
@@ -301,3 +301,4 @@ diffconfig: |
           CONFIG_SAH_MOD_AMXB_USP_REQUIRES_DEVICE_PREFIX=y
           CONFIG_INCLUDE_CONFIG=y
           CONFIG_PACKAGE_ipset=y
+          CONFIG_SAH_WLD_ENABLE_USP_SERVER_SOCKET=y

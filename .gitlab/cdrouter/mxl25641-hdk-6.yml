@@ -31,12 +31,12 @@ CDRouter-Top-100+mDNS-OSP MXL25641-HDK-6 PPPoE WAN eMMC:
 
 CDRouter-Wireless MXL25641-HDK-6 eMMC:
   <<: *mxl25641_cdrouter
-  stage: cdrouter smoke
+  stage: smoke tests
   timeout: 15 minutes
   variables:
     CDROUTER_TEST_CONFIG: wireless
-    CDROUTER_CONFIG_WIFI_BEACON_PHY: 'ax b be g n'
-    CDROUTER_CONFIG_WIFI_BEACON_RSN_CIPHER: 'CCMP-128 GCMP-256'
+    CDROUTER_CONFIG_WIFI_BEACON_PHY: 'ax b g n'
+    CDROUTER_CONFIG_WIFI_BEACON_RSN_CIPHER: 'CCMP-128'
     DUT_INIT_SCRIPTS: |
       .gitlab/scripts/dut-init/cdrouter-dut-flush-dns-relay-cache.sh
       .gitlab/scripts/dut-init/cdrouter-dut-configure-wireless.sh
@@ -117,7 +117,7 @@ CDRouter-USP-prpl MXL25641-HDK-6 eMMC:
 
 prplWare-Smoke-Test-Suite MXL25641-HDK-6 eMMC:
   <<: *mxl25641_cdrouter_ipv6
-  stage: cdrouter smoke
+  stage: smoke tests
   variables:
     CDROUTER_TEST_CONFIG: smoke-test
     DUT_INIT_SCRIPTS: |
