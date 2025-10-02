@@ -63,6 +63,8 @@ Assure expected build configuration (PCF-1413):
   CONFIG_LIGHTTPD_SSL_SELECT=m
   CONFIG_LOGROTATE_ACL=y
   CONFIG_LXC_SECCOMP=y
+  CONFIG_MCASTD_CORE=y
+  CONFIG_MCASTD_CORE_NICE=-18
   CONFIG_MODEMMANAGER_WITH_MBIM=y
   CONFIG_MODEMMANAGER_WITH_NETIFD=y
   CONFIG_MODEMMANAGER_WITH_QMI=y
@@ -117,6 +119,7 @@ Assure expected build configuration (PCF-1413):
   # CONFIG_PACKAGE_dnsmasq is not set
   CONFIG_PACKAGE_dnsmasq-prpl=y
   CONFIG_PACKAGE_ebtables-legacy=y
+  CONFIG_PACKAGE_ebtables-legacy-utils=y
   CONFIG_PACKAGE_efr32-boot-config=y
   CONFIG_PACKAGE_ethernet-manager=y
   CONFIG_PACKAGE_ethtool-full=y
@@ -150,6 +153,8 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_kmod-asn1-decoder=y
   CONFIG_PACKAGE_kmod-crypto-md5=y
   CONFIG_PACKAGE_kmod-ebtables=y
+  CONFIG_PACKAGE_kmod-ebtables-ipv4=y
+  CONFIG_PACKAGE_kmod-ebtables-ipv6=y
   CONFIG_PACKAGE_kmod-fs-vfat=y
   CONFIG_PACKAGE_kmod-gpio-pca953x=y
   CONFIG_PACKAGE_kmod-i2c-core=y
@@ -175,6 +180,7 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_kmod-lib-crc-ccitt=y
   CONFIG_PACKAGE_kmod-lib-textsearch=y
   CONFIG_PACKAGE_kmod-loop=y
+  CONFIG_PACKAGE_kmod-mcastd-core=y
   CONFIG_PACKAGE_kmod-mhi-bus=y
   CONFIG_PACKAGE_kmod-mhi-net=y
   CONFIG_PACKAGE_kmod-mhi-pci-generic=y
@@ -372,6 +378,7 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_lxc-usernsexec=y
   CONFIG_PACKAGE_lxc-wait=y
   CONFIG_PACKAGE_mbim-utils=y
+  CONFIG_PACKAGE_mcastd-noforward=y
   CONFIG_PACKAGE_miniupnpd-prpl=y
   CONFIG_PACKAGE_mod-amxb-ubus=y
   CONFIG_PACKAGE_mod-amxb-usp=y
@@ -521,6 +528,7 @@ Assure expected build configuration (PCF-1413):
   CONFIG_PACKAGE_tr181-ipdiagnostics=y
   CONFIG_PACKAGE_tr181-led=y
   CONFIG_PACKAGE_tr181-logical=y
+  CONFIG_PACKAGE_tr181-mcastd=y
   CONFIG_PACKAGE_tr181-mqtt=y
   CONFIG_PACKAGE_tr181-mqttbroker=y
   CONFIG_PACKAGE_tr181-neighbordiscovery=y
@@ -682,6 +690,10 @@ Assure expected build configuration (PCF-1413):
   CONFIG_SAH_AMX_TR181_LOGICAL_ORDER=21
   CONFIG_SAH_AMX_TR181_LOGICAL_RUN_AS_GROUP="tr181_app"
   CONFIG_SAH_AMX_TR181_LOGICAL_RUN_AS_USER="tr181_app"
+  CONFIG_SAH_AMX_TR181_MCASTD_CORE_PLUGIN=y
+  CONFIG_SAH_AMX_TR181_MCASTD_CORE_PLUGIN_ORDER=22
+  CONFIG_SAH_AMX_TR181_MCASTD_CORE_PLUGIN_RUN_AS_GROUP="tr181_app"
+  CONFIG_SAH_AMX_TR181_MCASTD_CORE_PLUGIN_RUN_AS_USER="tr181_app"
   CONFIG_SAH_AMX_TR181_MQTT=y
   CONFIG_SAH_AMX_TR181_MQTTBROKER=y
   CONFIG_SAH_AMX_TR181_MQTTBROKER_ORDER=49
