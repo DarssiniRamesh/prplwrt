@@ -11,7 +11,9 @@ Check that logrotate is properly setup:
   /var/log/messages_lcm.log
   /var/log/messages_cram
   /var/log/messages_dhcp
+  /var/log/messages_hostapd
   /var/log/messages
+  /var/log/messages_wpa_supplicant
   /var/log/messages_firewall
 
   $ R "grep /usr/sbin/logrotate /etc/crontabs/root"

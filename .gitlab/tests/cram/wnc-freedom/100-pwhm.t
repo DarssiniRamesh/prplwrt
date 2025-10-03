@@ -185,6 +185,7 @@ Check that hostapd is operating as expected:
 
   $ R "ps axw" | sed -nE 's/.*(hostapd.*)/\1/p' | head -1 | tr -s ' ' '\n' | LC_ALL=C sort
   -ddt
+  -s
   /tmp/wlan0_hapd.conf
   /tmp/wlan1_hapd.conf
   /tmp/wlan2_hapd.conf
@@ -224,6 +225,70 @@ Check that the tree interfaces are present in the main link interface:
   channel.* (re)
   link 2:
   channel.* (re)
+
+Test custom arguments
+
+  $ R "ba-cli -j -l 'protected; WiFi.DaemonMgt.Daemon.hostapd.ExecutionSettings.CustomArguments=-dds' | grep CustomArguments"
+  [{"WiFi.DaemonMgt.Daemon.1.ExecutionSettings.":{"CustomArguments":"-dds"}}]
+
+  $ R "ba-cli -j -l 'protected; WiFi.DaemonMgt.Daemon.hostapd.ExecutionSettings.CustomArguments?' | grep CustomArguments"
+  [{"WiFi.DaemonMgt.Daemon.1.ExecutionSettings.":{"CustomArguments":"-dds"}}]
+
+  $ R "ba-cli -j -l 'protected; WiFi.DaemonMgt.Daemon.wpa_supplicant.ExecutionSettings.CustomArguments=-ds' | grep CustomArguments"
+  [{"WiFi.DaemonMgt.Daemon.2.ExecutionSettings.":{"CustomArguments":"-ds"}}]
+
+  $ R "ba-cli -j -l 'protected; WiFi.DaemonMgt.Daemon.wpa_supplicant.ExecutionSettings.CustomArguments?' | grep CustomArguments"
+  [{"WiFi.DaemonMgt.Daemon.2.ExecutionSettings.":{"CustomArguments":"-ds"}}]
+
+  $ sleep 10
+
+  $ R logger -t cram "Check that hostapd is operating"
+
+  $ R "ps axw" | sed -nE 's/.*(hostapd.*)/\1/p' | head -1 | tr -s ' ' '\n' | LC_ALL=C sort
+  -dds
+  -ddt
+  /tmp/wlan0_hapd.conf
+  /tmp/wlan1_hapd.conf
+  /tmp/wlan2_hapd.conf
+  hostapd
+
+  $ R logger -t cram "Check that wpa_supplicant is operating"
+
+  $ R "ps axw" | sed -nE 's/.*(wpa_supplicant.*)/\1/p' | head -3 | tr -s ' ' '\n' | LC_ALL=C sort
+  -ds
+  -ds
+  -ds
+  wpa_supplicant.conf
+  wpa_supplicant.conf
+  wpa_supplicant.conf
+
+Setting the custom arguments back to default value:
+
+  $ R "ba-cli -j -l 'protected; WiFi.DaemonMgt.Daemon.hostapd.ExecutionSettings.CustomArguments="-s"' | grep CustomArguments"
+  [{"WiFi.DaemonMgt.Daemon.1.ExecutionSettings.":{"CustomArguments":"-s"}}]
+
+  $ R "ba-cli -j -l 'protected; WiFi.DaemonMgt.Daemon.wpa_supplicant.ExecutionSettings.CustomArguments="-s"' | grep CustomArguments"
+  [{"WiFi.DaemonMgt.Daemon.2.ExecutionSettings.":{"CustomArguments":"-s"}}]
+
+  $ sleep 10
+
+  $ R logger -t cram "Check that hostapd is operating"
+
+  $ R "ps axw" | sed -nE 's/.*(hostapd.*)/\1/p' | head -1 | tr -s ' ' '\n' | LC_ALL=C sort
+  -ddt
+  -s
+  /tmp/wlan0_hapd.conf
+  /tmp/wlan1_hapd.conf
+  /tmp/wlan2_hapd.conf
+  hostapd
+
+  $ R "ps axw" | sed -nE 's/.*(wpa_supplicant.*)/\1/p' | head -3 | tr -s ' ' '\n' | LC_ALL=C sort
+  -s
+  -s
+  -s
+  wpa_supplicant.conf
+  wpa_supplicant.conf
+  wpa_supplicant.conf
 
 Test deactivation of access point 6:
 
