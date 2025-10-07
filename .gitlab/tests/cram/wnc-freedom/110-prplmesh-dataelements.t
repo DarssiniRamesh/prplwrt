@@ -242,3 +242,37 @@ Check the default ChipsetVendor param configurations:
   Qualcomm
   Qualcomm
   Qualcomm
+
+Restart prplmesh:
+
+  $ R "sed -i 's/use_dataelements_vap_configs=1/use_dataelements_vap_configs=0/g' /opt/prplmesh/config/beerocks_controller.conf 1>/dev/null"
+  
+  $ R logger -t cram "Restart prplmesh"
+
+  $ R "( /etc/init.d/prplmesh gateway_mode ; sleep 2 ) > /tmp/prplmesh-gw-mode.log 2>&1 ; logger -t prplmesh-gateway-mode < /tmp/prplmesh-gw-mode.log"
+
+  $ R "ubus -t 60 wait_for X_PRPLWARE-COM_WiFiController.Network.Device.1"
+
+  $ R ba-cli 'Device.WiFi.AccessPoint.1.SSIDReference="Device.WiFi.SSID.1"' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.2.SSIDReference="Device.WiFi.SSID.3"' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.3.SSIDReference="Device.WiFi.SSID.4"' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.4.SSIDReference="Device.WiFi.SSID.6"' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.5.SSIDReference="Device.WiFi.SSID.7"' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.6.SSIDReference="Device.WiFi.SSID.9"' 1>/dev/null
+
+  $ R ba-cli 'Device.WiFi.AccessPoint.1.Enable=1' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.2.Enable=1' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.3.Enable=1' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.4.Enable=1' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.5.Enable=1' 1>/dev/null
+  $ R ba-cli 'Device.WiFi.AccessPoint.6.Enable=1' 1>/dev/null
+
+  $ R sleep 10
+
+  $ R "ba-cli 'Device.WiFi.DataElements.Network.Device.*.Radio.*.BSS.?0' -j -l | jsonfilter -e @[0]'[*].SSID' -e @[0]'[*].BSSID' -e @[0]'[*].Enabled' | awk 'NR<=6 {ssid[NR]=$0} NR>6 && NR<=12 {bssid[NR-6]=$0} NR>12 {print ssid[NR-12], bssid[NR-12], $0}'"
+  prplOS ae:91:9b:ff:f3:80 1
+  prplOS-guest ae:91:9b:ff:f3:81 1
+  prplOS ae:91:9b:ff:f4:7f 1
+  prplOS ac:91:9b:ff:f1:82 1
+  prplOS-guest ae:91:9b:ff:f4:80 1
+  prplOS-guest ac:91:9b:ff:f1:83 1
