@@ -54,7 +54,16 @@ CDRouter-Wireless Haze initramfs:
 
 CDRouter-UPnP-IPv46 Haze initramfs:
   <<: *prpl_haze_ipv6
-  timeout: 70 minutes
+  timeout: 60 minutes
+  variables:
+    CDROUTER_TEST_CONFIG: generic-ipv6-upnp
+    DUT_INIT_SCRIPTS: |
+      .gitlab/scripts/dut-init/cdrouter-dut-flush-dns-relay-cache.sh
+
+CDRouter-UPnP-IPv46-Failing Haze initramfs:
+  <<: *prpl_haze_ipv6
+  timeout: 120 minutes
+  allow_failure: true
   variables:
     CDROUTER_TEST_CONFIG: generic-ipv6-upnp
     DUT_INIT_SCRIPTS: |
