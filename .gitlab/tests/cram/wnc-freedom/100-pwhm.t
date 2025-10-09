@@ -225,6 +225,105 @@ Check that the tree interfaces are present in the main link interface:
   link 2:
   channel.* (re)
 
+Check default country code and Power Type of 6GHz
+  $ R "ba-cli -j -l Device.WiFi.Radio.3.PowerType? | jsonfilter -e @[0]'[*].PowerType'"
+  indoor
+
+
+  $ R "ba-cli -j -l Device.WiFi.Radio.*.RegulatoryDomain? | jsonfilter -e @[0]'[*].RegulatoryDomain'"
+  US
+  US
+  US
+
+  $ R "ba-cli -j -l Device.WiFi.Radio.*.RegulatoryDomain=DE | jsonfilter -e @[0]'[*].RegulatoryDomain'"
+  DE
+  DE
+  DE
+
+  $ R "ba-cli -j -l Device.WiFi.Radio.*.RegulatoryDomain? | jsonfilter -e @[0]'[*].RegulatoryDomain'"
+  DE
+  DE
+  DE
+
+Check that hostapd is operating as expected in indoor power in DE:
+
+  $ R logger -t cram "Check that hostapd is operating"
+
+  $ R "ps axw" | sed -nE 's/.*(hostapd.*)/\1/p' | head -1 | tr -s ' ' '\n' | LC_ALL=C sort
+  -ddt
+  /tmp/wlan0_hapd.conf
+  /tmp/wlan1_hapd.conf
+  /tmp/wlan2_hapd.conf
+  hostapd
+
+Set 6ghz power type to veryLowPower
+
+  $ R "ba-cli -j -l Device.WiFi.Radio.3.PowerType=veryLowPower | jsonfilter -e @[0]'[*].PowerType'"
+  veryLowPower
+
+  $ R "ba-cli -j -l Device.WiFi.Radio.3.PowerType? | jsonfilter -e @[0]'[*].PowerType'"
+  veryLowPower
+
+  $ sleep 5
+
+Check that hostapd is operating as expected in veryLowPower in DE:
+
+  $ R logger -t cram "Check that hostapd is operating"
+  $ R "ps axw" | sed -nE 's/.*(hostapd.*)/\1/p' | head -1 | tr -s ' ' '\n' | LC_ALL=C sort
+  -ddt
+  /tmp/wlan0_hapd.conf
+  /tmp/wlan1_hapd.conf
+  /tmp/wlan2_hapd.conf
+  hostapd
+
+Set 6ghz power type to StandardPower ( Currently hostapd is down in SP , as it requires AFC)
+
+  $ R "ba-cli -j -l Device.WiFi.Radio.3.PowerType=standardPower | jsonfilter -e @[0]'[*].PowerType'"
+  standardPower
+
+  $ R "ba-cli -j -l Device.WiFi.Radio.3.PowerType? | jsonfilter -e @[0]'[*].PowerType'"
+  standardPower
+
+  $ sleep 5
+
+  $ get_ssid_status
+  Down
+  Down
+  Down
+  Down
+  Down
+  Down
+
+  $ R "ba-cli -j -l Device.WiFi.Radio.3.PowerType=indoor | jsonfilter -e @[0]'[*].PowerType'"
+  indoor
+
+  $ sleep 10
+
+  $ R "ba-cli -j -l Device.WiFi.Radio.*.RegulatoryDomain=US | jsonfilter -e @[0]'[*].RegulatoryDomain'"
+  US
+  US
+  US
+
+  $ sleep 10
+
+Check that hostapd is operating as expected in indoor power in US:
+
+  $ R logger -t cram "Check that hostapd is operating"
+  $ R "ps axw" | sed -nE 's/.*(hostapd.*)/\1/p' | head -1 | tr -s ' ' '\n' | LC_ALL=C sort
+  -ddt
+  /tmp/wlan0_hapd.conf
+  /tmp/wlan1_hapd.conf
+  /tmp/wlan2_hapd.conf
+  hostapd
+
+  $ get_ssid_status
+  Up
+  Up
+  Up
+  Up
+  Up
+  Up
+
 Test deactivation of access point 6:
 
   $ R logger -t cram "Test AccessPoint 6 deactivation "$(get_ssid_ref 6)""
