@@ -2,6 +2,13 @@ Create R alias:
 
   $ alias R="${CRAM_REMOTE_COMMAND:-}"
 
+Check that there is SFP+ stick present:
+
+  $ R 'ba-cli --less --json SFPs.Mgmt.SFF8472.1.Transceiver.?' | jq -r '.[0]."SFPs.Mgmt.SFF8472.1.Transceiver." | [.VendorSN, .VendorPN, .VendorName] | sort | .[]'
+  F\d+$ (re)
+  FS
+  SFP-10G-T
+
 Check that we've WPS gpio key available:
 
   $ R "cat /sys/firmware/devicetree/base/gpio-keys/wps/label"
