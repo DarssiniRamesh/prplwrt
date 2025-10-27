@@ -11,7 +11,7 @@ feeds:
 
   - name: feed_prplos
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed-prplos.git
-    revision: main@057b80150d5cca3ab18da476da125ea3f48ef8dc
+    revision: main@c34a2549e7a4d658b16ef5e389fc89fdb5592294
 
 additional_packages:
   - feed: packages
