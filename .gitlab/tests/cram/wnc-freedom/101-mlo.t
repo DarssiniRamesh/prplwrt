@@ -401,4 +401,74 @@ Resume prplMesh:
 Wait 20s before leaving the test:
 
   $ sleep 20
+  $ R logger -t cram "Starting Chandu MLO test .."
+
+Check if controller is up:
+
+  $ R logger -t cram "Checking if controller is up..."
+  $ R "pgrep -f beerocks_controller" || { echo "Controller not running"; exit 1; }
+  Controller not running (re)?
+
+Check beerocks process:
+
+  $ R logger -t cram "Checking beerocks process..."
+  $ R "ps aux | grep -i beerocks | awk '{print $11}' | sort -u" || { echo "beerocks process not found"; exit 1; }
+  /opt/prplmesh/bin/beerocks_agent
+  /opt/prplmesh/bin/beerocks_controller
+  /opt/prplmesh/bin/beerocks_fronthaul
+  /opt/prplmesh/bin/beerocks_vendor_message
+
+Disable MLO (MLDUnit = -1) for all SSIDs:
+
+  $ R logger -t cram "Disabling MLO (MLDUnit = -1) for all SSIDs..."
+  $ R "ba-cli -j -l WiFi.SSID.*.MLDUnit=-1 | jsonfilter -e @[0]'[*].MLDUnit'"
+  -1
+  -1
+  -1
+  -1
+  -1
+  -1
+  -1
+  -1
+  -1
+
+Enable DataElements VAP config:
+
+  $ R logger -t cram "Enabling DataElements VAP config..."
+  $ R "sed -i 's/^use_dataelements_vap_configs=.*/use_dataelements_vap_configs=1/' /opt/prplmesh/config/beerocks_controller.conf"
+
+Set new MLDUnit values:
+
+  $ R logger -t cram "Setting new MLDUnit values..."
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.+"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.Band2_4G=1"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.Band5GH=1"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.Band5GL=1"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.Band6G=1"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.Enable=1"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.SSID=TEST-FRONTHAUL"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.Security.ModeEnabled=WPA3-Personal"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.Security.SAEPassphrase=password-fhl"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.Security.KeyPassphrase=password-fhl"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.MultiApMode=Fronthaul"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPoint.1.MLDUnit=4"
+  $ R "ba-cli X_PRPLWARE-COM_WiFiController.Network.AccessPointCommit()"
+
+Verify MLDUnit is set to 4:
+
+  $ R "ba-cli -j -l WiFi.AccessPoint.1.SSIDReference+.MLDUnit=4 | jsonfilter -e @[0]'[*].MLDUnit'"
+  4
+  $ R logger -t cram "$(ba-cli -j -l WiFi.SSID.?0 | jq -c .)"
+
+Verify MLDUnit values in Data Model:
+
+  $ R logger -t cram "Verifying MLDUnit values in Data Model..."
+  $ R "ba-cli -j -l WiFi.SSID.?0 | jsonfilter -e @[0]'[?(@.MLDUnit==4)].MLDUnit'" | LC_ALL=C sort
+  4 (re)
+
+Final log:
+
+  $ R logger -t cram "Chandu MLDUnit test completed."
+
+  $ sleep 20
   $ R logger -t cram "MLO test finished!"
