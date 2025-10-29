@@ -1,5 +1,4 @@
 .wnc-freedom: &wnc_freedom
-  needs: ["build test qca_ipq95xx prpl cellular security thread"]
   extends:
     - .wnc-freedom testbed
     - .cdrouter
@@ -31,7 +30,7 @@ CDRouter-Top-100+mDNS Freedom PPPoE WAN initramfs:
 
 CDRouter-Wireless Freedom initramfs:
   <<: *wnc_freedom
-  stage: smoke tests
+  stage: run
   timeout: 15 minutes
   variables:
     CDROUTER_TEST_CONFIG: wireless
@@ -128,7 +127,7 @@ CDRouter-USP-prpl Freedom initramfs:
 
 prplWare-Smoke-Test-Suite Freedom initramfs:
   <<: *wnc_freedom_ipv6
-  stage: smoke tests
+  stage: run
   variables:
     CDROUTER_TEST_CONFIG: smoke-test
     DUT_INIT_SCRIPTS: |
@@ -139,7 +138,7 @@ prplWare-Smoke-Test-Suite Freedom initramfs:
 
 .wnc-freedom-certification: &wnc_freedom_certification
   <<: *wnc_freedom_ipv6
-  stage: certification tests
+  stage: run
   timeout: 70 minutes
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
