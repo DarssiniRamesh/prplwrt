@@ -3,7 +3,7 @@ description: A minimal set of prpl packages and configs (no WAN support, no LCM,
 feeds:
   - name: feed_amx
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_amx.git
-    revision: main@f723a78e1e1497600163ea2011ac0632bc86dfba
+    revision: main@f4d8b79f38d3fd8d24b9f4c801b361d02f715ac0
 
   - name: feed_prplmesh
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed-prplmesh.git
@@ -11,7 +11,7 @@ feeds:
 
   - name: feed_prplos
     uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed-prplos.git
-    revision: main@c64a1314737428b9a84ce2fbcfd9aeb83cebcba4
+    revision: main@08cca608f07dd2fb3a60c085e644d7b82e160f30
 
 additional_packages:
   - feed: packages
