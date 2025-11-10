@@ -19,7 +19,7 @@ Ensure that all services migrated to procd are no longer using the obsolete amx_
   > amx-fcgi|amx-shutdown-wait|cthulhu|netmodel-clients|rlyeh|timingila|\
   > tr181-conmon|tr181-conntrack-query|tr181-flashmonitor|tr181-gnimanager\
   > |tr181-homeplug|tr181-upnpdiscovery|data-model-mapper|tr069-discovery|\
-  > tr181-gatewayinfo|usp-discovery)'"
+  > tr181-gatewayinfo|usp-discovery|tr181-schedules)'"
   [1]
 
 Verify expected processes that should be started by procd are running, using \

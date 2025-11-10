@@ -107,6 +107,7 @@ Check that ubus has expected datamodels available:
   Device.Routing
   Device.SFPs
   Device.SSH
+  Device.Schedules
   Device.Security
   Device.SoftwareModules
   Device.Syslog
@@ -327,6 +328,8 @@ Check that ubus has expected datamodels available:
   SSH
   SSH.AuthorizedKey
   SSH.Server
+  Schedules
+  Schedules.Schedule
   Security
   Security.Certificate
   SoftwareModules
