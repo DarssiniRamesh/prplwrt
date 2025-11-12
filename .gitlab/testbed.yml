@@ -25,6 +25,7 @@
     TEST_SETUP_TEARDOWN_DURATION: 360
     CRAM_REMOTE_COMMAND: ssh root@$TARGET_LAN_IP
     CRAM_REMOTE_COPY: scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+    CRAM_FUNCTIONS_SOURCE: .gitlab/tests/cram/wifi/ressources/cram_functions.sh
     CRAM_TEST_SUITE: |
       .gitlab/tests/cram/generic/acceleration-plan-components
       .gitlab/tests/cram/$DUT_BOARD/acceleration-plan-components
@@ -115,6 +116,9 @@
 
       run_check ssh root@$TARGET_LAN_IP 'f=$(logread | grep "procd.*init complete"); echo "${f:-Warning: init is not complete yet,} $(uptime -p)"'
       run_check ssh root@$TARGET_LAN_IP 'logger -t CI -p local0.info "Testing starts, $(uptime -p)"'
+      CRAM_FUNCTIONS=$(mktemp /tmp/cram_functions_XXXXXX.sh)
+      run_check cp $CRAM_FUNCTIONS_SOURCE $CRAM_FUNCTIONS
+      export CRAM_FUNCTIONS
       run_check \
         timeout --kill-after=10s --verbose ${TEST_CUTOFF_TIMEOUT}s \
         python3 -m cram --xunit-file=cram-result-$LABGRID_TARGET.xunit.xml --verbose $CRAM_TEST_SUITE $CRAM_TEST_SUITE_EXTRA | tee cram-result-$LABGRID_TARGET.txt
@@ -184,6 +188,7 @@
     - ( [ $(tar -tf coredumps_all.tar.gz | wc -l) -eq 0 ] && rm coredumps_all.tar.gz || true ) 2>/dev/null
     - mv coredumps_all.tar.gz coredumps-$LABGRID_TARGET.tar.gz 2> /dev/null || true
     - mv console_$LABGRID_TARGET console_$LABGRID_TARGET.txt || true
+    - rm -f $CRAM_FUNCTIONS || true
 
   artifacts:
     expire_in: 1 month
