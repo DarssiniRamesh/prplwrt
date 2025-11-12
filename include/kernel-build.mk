@@ -48,6 +48,16 @@ ifneq ($(strip $(CONFIG_KERNEL_GIT_LOCAL_REPOSITORY)),"")
   KERNEL_GIT_OPTS+=--reference $(CONFIG_KERNEL_GIT_LOCAL_REPOSITORY)
 endif
 
+ifneq ($(strip $(CONFIG_KERNEL_GIT_DEPTH)),"")
+ifneq ($(filter-out 0,$(CONFIG_KERNEL_GIT_DEPTH)),)
+  KERNEL_GIT_OPTS+=--depth $(CONFIG_KERNEL_GIT_DEPTH)
+endif
+endif
+
+ifneq ($(strip $(CONFIG_KERNEL_GIT_BRANCH)),"")
+  KERNEL_GIT_OPTS+=--branch $(CONFIG_KERNEL_GIT_BRANCH)
+endif
+
 define Download/git-kernel
   URL:=$(call qstrip,$(CONFIG_KERNEL_GIT_CLONE_URI))
   PROTO:=git
