@@ -81,6 +81,11 @@ Test activation of access point 1:
   Down
   Up
 
+Save hostap pid:
+
+  $ hostap_pid=$(R pgrep -f 'hostapd')
+  $ R logger -t cram "hostap PID : $hostap_pid"
+
 Test activation of access point 2:
 
   $ R logger -t cram "Test AccessPoint 2 activation "$(get_ssid_ref 2)""
@@ -200,11 +205,11 @@ Check that hostapd is operating as expected:
 
   $ R logger -t cram "Check that hostapd is operating"
 
-  $ R "ps axw" | sed -nE 's/.*(hostapd.*)/\1/p' | head -1 | tr -s ' ' '\n' | LC_ALL=C sort
+  $ R "ps axw" | sed -nE 's/.*(hostapd .*)/\1/p' | head -1 | tr -s ' ' '\n' | LC_ALL=C sort
   -ddt
-  /tmp/wlan0_hapd.conf
-  /tmp/wlan1_hapd.conf
+  -g
   /tmp/wlan2_hapd.conf
+  /var/run/hostapd/global\.0x.* (re)
   hostapd
 
   $ R "ubus list | grep hostapd. | sort"
@@ -215,17 +220,10 @@ Check iw interfaces and beaconing:
 
   $ R "iw dev | grep -e Interface -e ssid | tr -d '\t' | sort"
   Interface wlan0
-  Interface wlan0.1
-  Interface wlan0.2
-  Interface wlan0.3
   Interface wlan1
-  Interface wlan1.1
-  Interface wlan1.2
-  Interface wlan1.3
   Interface wlan2
   Interface wlan2.1
   Interface wlan2.2
-  Interface wlan2.3
   ssid prplOS
   ssid prplOS-guest
 
@@ -359,6 +357,11 @@ Test deactivation of access point 2:
   Down
   Down
   Up
+
+Before deactivating last AP (ie stopping hostpad), check if hostap pid has changed or not:
+
+  $ if [ "$(R pgrep -f 'hostapd')" = "$hostap_pid" ]; then echo "true"; else echo "hostap restarted during the test !"; fi
+  true
 
 Test deactivation of access point 1:
 
